@@ -65,6 +65,48 @@ function App() {
     document.body.dataset.type = typeMood;
   }, [theme, typeMood]);
 
+  useEffect(() => {
+    const revealTargets = Array.from(document.querySelectorAll("[data-reveal]"));
+    const mobileQuery = window.matchMedia("(max-width: 760px)");
+    let observer;
+
+    const setDesktopVisible = () => {
+      revealTargets.forEach((element) => element.classList.add("is-visible"));
+    };
+
+    const setMobileObserver = () => {
+      revealTargets.forEach((element) => element.classList.remove("is-visible"));
+
+      observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+            }
+          });
+        },
+        {
+          threshold: 0.16,
+          rootMargin: "0px 0px -10% 0px",
+        }
+      );
+
+      revealTargets.forEach((element) => observer.observe(element));
+    };
+
+    if (mobileQuery.matches) {
+      setMobileObserver();
+    } else {
+      setDesktopVisible();
+    }
+
+    return () => {
+      if (observer) {
+        observer.disconnect();
+      }
+    };
+  }, []);
+
   const initialForm = useMemo(
     () => ({
       fullName: "",

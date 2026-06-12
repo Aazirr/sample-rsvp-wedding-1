@@ -96,3 +96,15 @@ Checklist:
 - [x] Add an animated scroll cue that leads toward the hero photos.
 - [x] Angle the stacked hero photos into a playing-card composition.
 - [x] Rebuild and verify the updated hero presentation on desktop and mobile.
+
+## Phase 9 - Mobile Hero And Scroll Reveal Tuning
+
+Status: Complete
+
+Checklist:
+
+- [x] Remove the desktop-only scroll cue.
+- [x] Collapse the extra empty space between the mobile hero copy and photo stack.
+- [x] Keep the mobile hero gallery aligned cleanly under the invitation content.
+- [x] Add mobile scroll-based opacity reveals for the hero and sections.
+- [x] Rebuild and verify the mobile presentation flow.
