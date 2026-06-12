@@ -1,0 +1,34 @@
+{
+  "name": "package-one-sample",
+  "version": "1.0.0",
+  "description": "Sample wedding RSVP site for SunSpire Studios",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aazirr/sample-rsvp-wedding-1.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/Aazirr/sample-rsvp-wedding-1/issues"
+  },
+  "homepage": "https://github.com/Aazirr/sample-rsvp-wedding-1#readme",
+  "devDependencies": {
+    "@vitejs/plugin-react": "^6.0.2",
+    "playwright": "^1.60.0",
+    "vite": "^8.0.16"
+  },
+  "dependencies": {
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7"
+  }
+}

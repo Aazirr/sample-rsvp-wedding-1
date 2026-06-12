@@ -255,6 +255,8 @@ Signature and Premium upgrades can be shown elsewhere, but this sample should no
 
 - Keep the implementation lightweight.
 - Use local photos from `Photoshoot/`.
+- Use a deploy-safe public asset path for production builds.
+- Prefer a lightweight framework setup if it improves asset handling, animation control, and future maintainability.
 - Optimize images for web delivery.
 - Preserve a one-page experience.
 - Prioritize mobile layout testing before desktop polish.

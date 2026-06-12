@@ -36,3 +36,16 @@ Checklist:
 - [x] Check image loading and cropping.
 - [x] Test RSVP form states.
 - [x] Prepare final delivery notes.
+
+## Phase 4 - Frontend Polish And Framework Migration
+
+Status: Complete
+
+Checklist:
+
+- [x] Identify why deployed images are missing.
+- [x] Move image assets into a deploy-safe public path.
+- [x] Migrate the project to a framework-based frontend stack.
+- [x] Improve mobile centering and spacing.
+- [x] Add tasteful animations and section reveals.
+- [x] Verify the rebuilt app on desktop and mobile.
