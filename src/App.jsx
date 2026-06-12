@@ -1,25 +1,30 @@
 import { useEffect, useMemo, useState } from "react";
+import { CalendarDays, Clock3, MapPin, Shirt, Sparkles } from "lucide-react";
 
 const eventDetails = [
   {
     label: "Ceremony",
     value: "3:00 PM",
     copy: "St. Benedict Chapel\nTagaytay City, Philippines",
+    Icon: CalendarDays,
   },
   {
     label: "Reception",
     value: "5:30 PM",
     copy: "The Garden Pavilion\nAlta Veranda, Tagaytay City",
+    Icon: MapPin,
   },
   {
     label: "Dress Code",
     value: "Semi-Formal",
     copy: "Soft neutrals, sage, dusty blue, or champagne tones are warmly welcome.",
+    Icon: Shirt,
   },
   {
     label: "RSVP Deadline",
     value: "October 25, 2026",
     copy: "For assistance, contact Sofia at +63 917 555 0146.",
+    Icon: Clock3,
   },
 ];
 
@@ -79,16 +84,15 @@ function App() {
 
   return (
     <div className="site-shell">
-      <div className="ambient ambient-left" aria-hidden="true" />
-      <div className="ambient ambient-right" aria-hidden="true" />
-
       <main className="page-shell">
         <header className="hero" data-reveal style={{ "--reveal-delay": "0ms" }}>
           <div className="hero-copy">
-            <p className="date-pill">November 22, 2026</p>
             <h1>
-              Amelia <span>&amp;</span> Theo
+              <span>Amelia</span>
+              <em>and</em>
+              <span>Theo</span>
             </h1>
+            <p className="date-pill">November 22, 2026</p>
             <p className="hero-note">
               We would love for you to join us for an intimate garden celebration
               filled with music, candlelight, and good company.
@@ -108,17 +112,11 @@ function App() {
               <img src="/photos/1.jpg" alt="Bride and groom portrait" />
             </figure>
 
-            <aside className="hero-stack">
+            <div className="hero-stack" aria-hidden="true">
               <figure className="hero-photo hero-photo-side">
                 <img src="/photos/7.jpg" alt="Couple standing beside a tree" />
               </figure>
-
-              <p className="hero-note-card">
-                <span className="section-label">Please join us</span>
-                For a relaxed afternoon ceremony and sunset dinner with our
-                favorite people.
-              </p>
-            </aside>
+            </div>
           </div>
         </header>
 
@@ -131,6 +129,7 @@ function App() {
           <div className="details-list" aria-label="Event details">
             {eventDetails.map((item) => (
               <article className="detail-row" key={item.label}>
+                <item.Icon className="detail-icon" aria-hidden="true" />
                 <div className="detail-head">
                   <p className="detail-title">{item.label}</p>
                   <p className="detail-value">{item.value}</p>
@@ -151,10 +150,11 @@ function App() {
         <section className="section story-section" data-reveal style={{ "--reveal-delay": "160ms" }}>
           <div className="story-copy">
             <p className="section-label">A Simple Starter Sample</p>
-            <h2>Clean, personal, and built to be shared fast.</h2>
+            <h2>Simple. Practical. Beautiful.</h2>
             <p>
               This sample keeps the focus on RSVP while still feeling warm,
-              polished, and easy to send to guests from mobile chat.
+              polished, and easy to send to guests from mobile chat. No extra pages,
+              no guest dashboard, just the details and a smooth response flow.
             </p>
           </div>
 
@@ -190,6 +190,10 @@ function App() {
                   ))}
                 </ul>
               </div>
+
+              <figure className="rsvp-photo">
+                <img src="/photos/6.jpg" alt="Bride and groom smiling outdoors" />
+              </figure>
             </aside>
 
             <form className="rsvp-form" onSubmit={handleSubmit}>
@@ -348,6 +352,7 @@ function App() {
         </section>
 
         <footer className="footer" data-reveal style={{ "--reveal-delay": "400ms" }}>
+          <Sparkles className="footer-mark" aria-hidden="true" />
           <p className="footer-script">With love, Amelia &amp; Theo</p>
           <p className="footer-copy">
             For RSVP concerns, please contact Sofia at +63 917 555 0146.
