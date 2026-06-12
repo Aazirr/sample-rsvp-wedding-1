@@ -73,3 +73,15 @@ Checklist:
 - [x] Add floral frame treatments to the invitation photos.
 - [x] Center the invitation summary and expectation copy on mobile.
 - [x] Rebuild and verify the refined frontend on desktop and mobile.
+
+## Phase 7 - Hero Stack Interaction Refinement
+
+Status: Complete
+
+Checklist:
+
+- [x] Remove the floral photo framing from the invitation photos.
+- [x] Rework the hero images into a same-size stacked composition.
+- [x] Make the stacked hero photos swap front and back on click.
+- [x] Keep the first mobile hero viewport text-led before the photos appear.
+- [x] Rebuild and verify the updated hero behavior on desktop and mobile.

@@ -240,7 +240,7 @@ textarea {
   display: grid;
   min-height: 660px;
   align-items: center;
-  justify-items: end;
+  justify-items: center;
 }
 
 .framed-photo {
@@ -255,8 +255,8 @@ textarea {
 .framed-photo::after {
   content: "";
   position: absolute;
-  inset: 14px;
-  border: 1px solid rgba(196, 143, 130, 0.3);
+  inset: 16px;
+  border: 1px solid rgba(196, 143, 130, 0.18);
   pointer-events: none;
 }
 
@@ -265,80 +265,60 @@ textarea {
   object-fit: cover;
 }
 
-.floral-corner {
-  position: absolute;
-  z-index: 2;
-  width: clamp(82px, 8vw, 116px);
-  height: clamp(82px, 8vw, 116px);
-  color: rgba(194, 125, 115, 0.78);
-  pointer-events: none;
-  opacity: 0.96;
+.hero-stack {
+  position: relative;
+  width: min(560px, 88%);
+  height: min(76vh, 720px);
 }
 
-.floral-corner svg {
+.hero-stack-button {
+  position: absolute;
+  width: min(430px, 100%);
+  height: min(76vh, 560px);
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  appearance: none;
+  transition:
+    transform 260ms ease,
+    box-shadow 260ms ease,
+    opacity 260ms ease;
+}
+
+.hero-stack-button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 6px;
+}
+
+.hero-stack-front {
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.hero-stack-back {
+  top: 44px;
+  left: 58px;
+  z-index: 1;
+  opacity: 0.92;
+}
+
+.hero-stack-front:hover,
+.hero-stack-back:hover {
+  transform: translateY(-4px);
+}
+
+.hero-photo {
   width: 100%;
   height: 100%;
 }
 
-.floral-corner path,
-.floral-corner circle {
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 2.25;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-.floral-corner circle {
-  fill: rgba(255, 249, 246, 0.85);
-}
-
-.floral-corner-top-left {
-  top: -18px;
-  left: -16px;
-}
-
-.floral-corner-top-right {
-  top: -18px;
-  right: -16px;
-  transform: scaleX(-1);
-}
-
-.floral-corner-bottom-left {
-  bottom: -18px;
-  left: -16px;
-  transform: scaleY(-1);
-}
-
-.floral-corner-bottom-right {
-  right: -16px;
-  bottom: -18px;
-  transform: scale(-1);
-}
-
-.hero-photo-main {
-  position: relative;
-  z-index: 1;
-  width: min(520px, 78%);
-  height: min(70vh, 680px);
+.hero-photo-front {
   animation: floatPhoto 9s ease-in-out infinite;
 }
 
-.hero-photo-main::before {
-  content: "";
-  position: absolute;
-  inset: 22px -22px -22px 22px;
-  z-index: -1;
-  background: var(--accent-soft);
-}
-
-.hero-photo-side {
-  position: absolute;
-  right: 0;
-  bottom: 32px;
-  z-index: 2;
-  width: min(230px, 36%);
-  height: 310px;
+.hero-photo-back {
   animation: floatPhoto 9s ease-in-out infinite;
   animation-delay: -4.5s;
 }
@@ -685,10 +665,6 @@ textarea:focus,
     grid-template-columns: 1fr;
   }
 
-  .hero {
-    min-height: auto;
-  }
-
   .hero-copy,
   .story-copy,
   .section-heading,
@@ -701,13 +677,14 @@ textarea:focus,
     justify-items: center;
   }
 
-  .hero-photo-main {
-    width: min(520px, 76%);
-    height: min(66vh, 620px);
+  .hero-stack {
+    width: min(500px, 82%);
+    height: 640px;
   }
 
-  .hero-photo-side {
-    height: 280px;
+  .hero-stack-button {
+    width: min(390px, 100%);
+    height: 520px;
   }
 
   .details-list {
@@ -734,6 +711,12 @@ textarea:focus,
     padding: 34px 0;
   }
 
+  .hero {
+    align-content: start;
+    min-height: calc(100svh + 500px);
+    padding-top: 28px;
+  }
+
   .hero h1 {
     font-size: clamp(3.8rem, 18vw, 5.2rem);
   }
@@ -751,49 +734,33 @@ textarea:focus,
     font-size: 0.94rem;
   }
 
-  .hero-photo-main {
-    width: min(100%, 310px);
-    height: 460px;
-  }
-
-  .hero-photo-main::before {
-    inset: 14px -14px -14px 14px;
-  }
-
   .framed-photo::after {
     inset: 10px;
   }
 
-  .floral-corner {
-    width: 76px;
-    height: 76px;
+  .hero-media {
+    min-height: 520px;
+    margin-top: clamp(240px, 34vh, 340px);
   }
 
-  .floral-corner-top-left,
-  .floral-corner-top-right {
-    top: -12px;
+  .hero-stack {
+    width: min(100%, 320px);
+    height: 440px;
   }
 
-  .floral-corner-top-left,
-  .floral-corner-bottom-left {
-    left: -10px;
+  .hero-stack-button {
+    width: 100%;
+    height: 372px;
   }
 
-  .floral-corner-top-right,
-  .floral-corner-bottom-right {
-    right: -10px;
+  .hero-stack-front {
+    top: 0;
+    left: 0;
   }
 
-  .floral-corner-bottom-left,
-  .floral-corner-bottom-right {
-    bottom: -12px;
-  }
-
-  .hero-photo-side {
-    right: 10px;
-    bottom: -36px;
-    width: 132px;
-    height: 188px;
+  .hero-stack-back {
+    top: 68px;
+    left: 0;
   }
 
   .story-photo,
