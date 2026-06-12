@@ -108,3 +108,14 @@ Checklist:
 - [x] Keep the mobile hero gallery aligned cleanly under the invitation content.
 - [x] Add mobile scroll-based opacity reveals for the hero and sections.
 - [x] Rebuild and verify the mobile presentation flow.
+
+## Phase 10 - Mobile Hero Layout Correction
+
+Status: Complete
+
+Checklist:
+
+- [x] Make the first mobile hero screen end before the photo stack appears.
+- [x] Remove the apparent dead space between the mobile cue and the gallery.
+- [x] Re-center the stacked hero photos horizontally on mobile.
+- [x] Rebuild and verify the corrected mobile hero layout.
