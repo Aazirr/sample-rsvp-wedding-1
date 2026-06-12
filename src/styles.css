@@ -805,12 +805,12 @@ textarea:focus,
 
   .hero {
     align-content: start;
-    min-height: calc(100svh + 500px);
+    min-height: calc(100svh + 320px);
     padding-top: 28px;
   }
 
   .hero-copy {
-    min-height: calc(100svh - 48px);
+    min-height: calc(100svh - 120px);
     align-content: center;
     padding-block: 0;
   }
@@ -837,28 +837,28 @@ textarea:focus,
   }
 
   .hero-media {
-    min-height: 520px;
-    margin-top: clamp(240px, 34vh, 340px);
+    min-height: 440px;
+    margin-top: 88px;
   }
 
   .hero-stack {
-    width: min(100%, 320px);
+    width: min(100%, 328px);
     height: 440px;
   }
 
   .hero-stack-button {
-    width: 100%;
+    width: 286px;
     height: 372px;
   }
 
   .hero-stack-front {
     top: 14px;
-    left: 4px;
+    left: 18px;
   }
 
   .hero-stack-back {
     top: 58px;
-    left: 26px;
+    left: 44px;
   }
 
   .hero-scroll {
