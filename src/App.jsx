@@ -46,6 +46,74 @@ const highlightList = [
   "Acoustic after-party set",
 ];
 
+function FloralCorners() {
+  return (
+    <>
+      <span className="floral-corner floral-corner-top-left" aria-hidden="true">
+        <svg viewBox="0 0 120 120" role="presentation">
+          <path d="M96 20c-15 2-27 9-35 19-9 10-15 23-18 39" />
+          <path d="M85 22c5 9 6 18 3 28" />
+          <path d="M67 35c-10 0-18 4-24 12" />
+          <path d="M46 53c-7-4-15-5-24-2" />
+          <path d="M41 70c-8 1-14 5-19 12" />
+          <path d="M61 52c4 7 6 15 5 23" />
+          <circle cx="88" cy="22" r="4.5" />
+          <circle cx="64" cy="35" r="4" />
+          <circle cx="42" cy="52" r="4" />
+        </svg>
+      </span>
+      <span className="floral-corner floral-corner-top-right" aria-hidden="true">
+        <svg viewBox="0 0 120 120" role="presentation">
+          <path d="M96 20c-15 2-27 9-35 19-9 10-15 23-18 39" />
+          <path d="M85 22c5 9 6 18 3 28" />
+          <path d="M67 35c-10 0-18 4-24 12" />
+          <path d="M46 53c-7-4-15-5-24-2" />
+          <path d="M41 70c-8 1-14 5-19 12" />
+          <path d="M61 52c4 7 6 15 5 23" />
+          <circle cx="88" cy="22" r="4.5" />
+          <circle cx="64" cy="35" r="4" />
+          <circle cx="42" cy="52" r="4" />
+        </svg>
+      </span>
+      <span className="floral-corner floral-corner-bottom-left" aria-hidden="true">
+        <svg viewBox="0 0 120 120" role="presentation">
+          <path d="M96 20c-15 2-27 9-35 19-9 10-15 23-18 39" />
+          <path d="M85 22c5 9 6 18 3 28" />
+          <path d="M67 35c-10 0-18 4-24 12" />
+          <path d="M46 53c-7-4-15-5-24-2" />
+          <path d="M41 70c-8 1-14 5-19 12" />
+          <path d="M61 52c4 7 6 15 5 23" />
+          <circle cx="88" cy="22" r="4.5" />
+          <circle cx="64" cy="35" r="4" />
+          <circle cx="42" cy="52" r="4" />
+        </svg>
+      </span>
+      <span className="floral-corner floral-corner-bottom-right" aria-hidden="true">
+        <svg viewBox="0 0 120 120" role="presentation">
+          <path d="M96 20c-15 2-27 9-35 19-9 10-15 23-18 39" />
+          <path d="M85 22c5 9 6 18 3 28" />
+          <path d="M67 35c-10 0-18 4-24 12" />
+          <path d="M46 53c-7-4-15-5-24-2" />
+          <path d="M41 70c-8 1-14 5-19 12" />
+          <path d="M61 52c4 7 6 15 5 23" />
+          <circle cx="88" cy="22" r="4.5" />
+          <circle cx="64" cy="35" r="4" />
+          <circle cx="42" cy="52" r="4" />
+        </svg>
+      </span>
+    </>
+  );
+}
+
+function PhotoFrame({ className, src, alt }) {
+  return (
+    <figure className={`framed-photo ${className}`}>
+      <FloralCorners />
+      <img src={src} alt={alt} />
+    </figure>
+  );
+}
+
 function App() {
   const [theme, setTheme] = useState("blush");
   const [typeMood, setTypeMood] = useState("classic");
@@ -108,14 +176,18 @@ function App() {
           </div>
 
           <div className="hero-media">
-            <figure className="hero-photo hero-photo-main">
-              <img src="/photos/1.jpg" alt="Bride and groom portrait" />
-            </figure>
+            <PhotoFrame
+              className="hero-photo hero-photo-main"
+              src="/photos/1.jpg"
+              alt="Bride and groom portrait"
+            />
 
             <div className="hero-stack" aria-hidden="true">
-              <figure className="hero-photo hero-photo-side">
-                <img src="/photos/7.jpg" alt="Couple standing beside a tree" />
-              </figure>
+              <PhotoFrame
+                className="hero-photo hero-photo-side"
+                src="/photos/7.jpg"
+                alt="Couple standing beside a tree"
+              />
             </div>
           </div>
         </header>
@@ -158,9 +230,11 @@ function App() {
             </p>
           </div>
 
-          <figure className="story-photo">
-            <img src="/photos/4.jpg" alt="Full-length couple portrait outdoors" />
-          </figure>
+          <PhotoFrame
+            className="story-photo"
+            src="/photos/4.jpg"
+            alt="Full-length couple portrait outdoors"
+          />
         </section>
 
         <section className="section rsvp-section" id="rsvp" data-reveal style={{ "--reveal-delay": "240ms" }}>
@@ -191,9 +265,11 @@ function App() {
                 </ul>
               </div>
 
-              <figure className="rsvp-photo">
-                <img src="/photos/6.jpg" alt="Bride and groom smiling outdoors" />
-              </figure>
+              <PhotoFrame
+                className="rsvp-photo"
+                src="/photos/6.jpg"
+                alt="Bride and groom smiling outdoors"
+              />
             </aside>
 
             <form className="rsvp-form" onSubmit={handleSubmit}>

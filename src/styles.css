@@ -54,11 +54,7 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
-  background:
-    linear-gradient(90deg, rgba(194, 125, 115, 0.05) 1px, transparent 1px),
-    linear-gradient(180deg, rgba(194, 125, 115, 0.04) 1px, transparent 1px),
-    linear-gradient(180deg, #fffefd 0%, var(--bg) 48%, #fbf8f1 100%);
-  background-size: 42px 42px, 42px 42px, auto;
+  background: linear-gradient(180deg, #fffefd 0%, var(--bg) 52%, #fbf8f1 100%);
   color: var(--text);
   font-family: var(--body-font);
 }
@@ -247,8 +243,8 @@ textarea {
   justify-items: end;
 }
 
-.hero-photo,
-.story-photo {
+.framed-photo {
+  position: relative;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.78);
   border-radius: 2px;
@@ -256,10 +252,68 @@ textarea {
   box-shadow: 0 26px 64px rgba(92, 66, 54, 0.14);
 }
 
-.hero-photo img,
-.story-photo img {
+.framed-photo::after {
+  content: "";
+  position: absolute;
+  inset: 14px;
+  border: 1px solid rgba(196, 143, 130, 0.3);
+  pointer-events: none;
+}
+
+.framed-photo img {
   height: 100%;
   object-fit: cover;
+}
+
+.floral-corner {
+  position: absolute;
+  z-index: 2;
+  width: clamp(82px, 8vw, 116px);
+  height: clamp(82px, 8vw, 116px);
+  color: rgba(194, 125, 115, 0.78);
+  pointer-events: none;
+  opacity: 0.96;
+}
+
+.floral-corner svg {
+  width: 100%;
+  height: 100%;
+}
+
+.floral-corner path,
+.floral-corner circle {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.25;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.floral-corner circle {
+  fill: rgba(255, 249, 246, 0.85);
+}
+
+.floral-corner-top-left {
+  top: -18px;
+  left: -16px;
+}
+
+.floral-corner-top-right {
+  top: -18px;
+  right: -16px;
+  transform: scaleX(-1);
+}
+
+.floral-corner-bottom-left {
+  bottom: -18px;
+  left: -16px;
+  transform: scaleY(-1);
+}
+
+.floral-corner-bottom-right {
+  right: -16px;
+  bottom: -18px;
+  transform: scale(-1);
 }
 
 .hero-photo-main {
@@ -396,7 +450,10 @@ textarea {
 }
 
 .mini-list {
-  padding-left: 18px;
+  display: grid;
+  gap: 8px;
+  padding: 0;
+  list-style: none;
 }
 
 .rsvp-photo {
@@ -703,6 +760,35 @@ textarea:focus,
     inset: 14px -14px -14px 14px;
   }
 
+  .framed-photo::after {
+    inset: 10px;
+  }
+
+  .floral-corner {
+    width: 76px;
+    height: 76px;
+  }
+
+  .floral-corner-top-left,
+  .floral-corner-top-right {
+    top: -12px;
+  }
+
+  .floral-corner-top-left,
+  .floral-corner-bottom-left {
+    left: -10px;
+  }
+
+  .floral-corner-top-right,
+  .floral-corner-bottom-right {
+    right: -10px;
+  }
+
+  .floral-corner-bottom-left,
+  .floral-corner-bottom-right {
+    bottom: -12px;
+  }
+
   .hero-photo-side {
     right: 10px;
     bottom: -36px;
@@ -725,18 +811,23 @@ textarea:focus,
     text-align: center;
   }
 
+  .sidebar-column,
+  .sidebar-panel {
+    justify-items: center;
+    text-align: center;
+  }
+
   .rsvp-layout {
     gap: 24px;
   }
 
-  .rsvp-form {
-    padding: 20px;
+  .mini-list {
+    justify-items: center;
+    margin: 0 auto;
   }
 
-  .mini-list {
-    display: inline-grid;
-    text-align: left;
-    margin: 0 auto;
+  .rsvp-form {
+    padding: 20px;
   }
 
   .form-row {

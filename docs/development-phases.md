@@ -62,3 +62,14 @@ Checklist:
 - [x] Improve the RSVP section with a stronger form and photo pairing.
 - [x] Remove decorative ambient blobs from the background.
 - [x] Verify desktop, mobile, image loading, and RSVP success behavior.
+
+## Phase 6 - Invitation Styling Refinement
+
+Status: Complete
+
+Checklist:
+
+- [x] Remove the patterned page background and keep a cleaner backdrop.
+- [x] Add floral frame treatments to the invitation photos.
+- [x] Center the invitation summary and expectation copy on mobile.
+- [x] Rebuild and verify the refined frontend on desktop and mobile.
