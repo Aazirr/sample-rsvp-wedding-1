@@ -85,3 +85,14 @@ Checklist:
 - [x] Make the stacked hero photos swap front and back on click.
 - [x] Keep the first mobile hero viewport text-led before the photos appear.
 - [x] Rebuild and verify the updated hero behavior on desktop and mobile.
+
+## Phase 8 - Hero Motion And Card Styling
+
+Status: Complete
+
+Checklist:
+
+- [x] Center the hero invitation copy more vertically.
+- [x] Add an animated scroll cue that leads toward the hero photos.
+- [x] Angle the stacked hero photos into a playing-card composition.
+- [x] Rebuild and verify the updated hero presentation on desktop and mobile.

@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { CalendarDays, Clock3, MapPin, Shirt, Sparkles } from "lucide-react";
+import { CalendarDays, ChevronDown, Clock3, MapPin, Shirt, Sparkles } from "lucide-react";
 
 const eventDetails = [
   {
@@ -119,9 +119,17 @@ function App() {
                 View Details
               </a>
             </div>
+
+            <a className="hero-scroll" href="#hero-gallery">
+              <span className="hero-scroll-copy">Scroll to photos</span>
+              <span className="hero-scroll-mark" aria-hidden="true">
+                <span className="hero-scroll-line" />
+                <ChevronDown className="hero-scroll-icon" />
+              </span>
+            </a>
           </div>
 
-          <div className="hero-media">
+          <div className="hero-media" id="hero-gallery">
             <div className="hero-stack" aria-label="Wedding photo gallery">
               <button
                 className="hero-stack-button hero-stack-back"
