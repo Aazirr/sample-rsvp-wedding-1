@@ -292,4 +292,5 @@ Checklist:
 - [x] Identify likely sources of the long blank space at the bottom of the mobile page.
 - [x] Remove the mobile fixed-background behavior that can cause end-of-page whitespace artifacts.
 - [x] Tighten the mobile section and footer spacing to reduce the dead tail at the end of the page.
+- [x] Remove the last bits of page/footer bottom padding on mobile.
 - [x] Rebuild and visually verify the bottom edge on mobile.

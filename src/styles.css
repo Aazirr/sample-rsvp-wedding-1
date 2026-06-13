@@ -1060,7 +1060,7 @@ textarea:focus,
   .page {
     width: 100%;
     padding-top: 0;
-    padding-bottom: 12px;
+    padding-bottom: 0;
   }
 
   .hero,
@@ -1241,8 +1241,8 @@ textarea:focus,
   }
 
   .footer {
-    padding-top: 22px;
-    padding-bottom: 6px;
+    padding-top: 18px;
+    padding-bottom: 0;
   }
 
   .expectations li {
