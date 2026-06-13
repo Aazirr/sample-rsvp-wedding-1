@@ -288,18 +288,14 @@ textarea {
 .framed-photo {
   position: relative;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.78);
-  border-radius: 2px;
-  background: var(--surface-strong);
-  box-shadow: 0 26px 64px rgba(92, 66, 54, 0.14);
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
 }
 
 .framed-photo::after {
-  content: "";
-  position: absolute;
-  inset: 16px;
-  border: 1px solid rgba(196, 143, 130, 0.18);
-  pointer-events: none;
+  content: none;
 }
 
 .framed-photo img {
@@ -360,6 +356,10 @@ textarea {
 .hero-photo {
   width: 100%;
   height: 100%;
+}
+
+.hero-photo img {
+  object-fit: contain;
 }
 
 .hero-photo-front {
@@ -812,7 +812,7 @@ textarea:focus,
     align-items: center;
     min-height: 100svh;
     justify-content: center;
-    padding-block: 28px 34px;
+    padding-block: 28px 88px;
   }
 
   .hero h1 {
@@ -837,14 +837,21 @@ textarea:focus,
   }
 
   .hero-media {
-    min-height: 100svh;
-    margin-top: 0;
+    min-height: auto;
+    width: calc(100% + 18px);
+    margin: -88px -9px 0;
     place-items: center;
+    overflow: clip;
+    padding: 106px 0 30px;
+    background: linear-gradient(180deg, rgba(242, 223, 216, 0.9), rgba(250, 241, 234, 0.98));
+    border-top: 1px solid rgba(194, 125, 115, 0.16);
+    border-bottom: 1px solid rgba(194, 125, 115, 0.14);
   }
 
   .hero-stack {
-    width: min(100%, 332px);
-    height: min(100svh - 60px, 420px);
+    width: min(100%, 340px);
+    height: 392px;
+    margin: 0 auto;
   }
 
   .hero-stack-button {

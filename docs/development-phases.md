@@ -142,7 +142,18 @@ Checklist:
 - [x] Reduce the mobile photo stage height so it no longer creates excess blank space.
 - [x] Rebuild and verify the corrected mobile hero measurements.
 
-## Phase 13 - Mobile Hero Scroll Replacement
+## Phase 13 - Mobile Photo Section Separation
+
+Status: Complete
+
+Checklist:
+
+- [x] Remove the floating white-space feel between the mobile hero and photos.
+- [x] Give the mobile photo stage its own colored container treatment.
+- [x] Keep the stacked photos centered inside the separated mobile band.
+- [x] Rebuild and verify the updated mobile section transition.
+
+## Phase 14 - Mobile Hero Scroll Replacement
 
 Status: Complete
 
@@ -152,3 +163,24 @@ Checklist:
 - [x] Keep the hero pinned while the next section replaces it.
 - [x] Bring the event details section upward as the hero fades out.
 - [x] Rebuild and verify the mobile transition behavior.
+
+## Phase 15 - Mobile Photo Band Refinement
+
+Status: Complete
+
+Checklist:
+
+- [x] Diagnose the remaining mobile whitespace as page-gutter framing around the photo stage.
+- [x] Expand the mobile photo section into a full-bleed colored band.
+- [x] Keep the stacked photos centered within the new mobile band.
+- [x] Rebuild and verify the refined hero-to-photo transition on mobile.
+
+## Phase 16 - Image Treatment Cleanup
+
+Status: Complete
+
+Checklist:
+
+- [x] Remove decorative frame styling that alters the photo presentation.
+- [x] Stop the stacked hero photos from cropping via cover-fit behavior.
+- [x] Preserve the existing layout while showing the images more naturally.
