@@ -803,16 +803,17 @@ textarea:focus,
     gap: 0;
     align-content: start;
     min-height: auto;
-    padding-top: 10px;
+    padding-top: 0;
   }
 
   .hero-copy {
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: calc(100svh - 10px);
+    position: relative;
+    min-height: 100svh;
     justify-content: center;
-    padding-block: 0;
+    padding-block: 28px 92px;
   }
 
   .hero h1 {
@@ -837,8 +838,8 @@ textarea:focus,
   }
 
   .hero-media {
-    min-height: 100svh;
-    margin-top: 0;
+    min-height: min(72svh, 560px);
+    margin-top: clamp(18px, 5svh, 42px);
     place-items: center;
   }
 
@@ -865,11 +866,7 @@ textarea:focus,
   }
 
   .hero-scroll {
-    display: inline-grid;
-    justify-items: center;
-    margin-top: auto;
-    padding-top: 18px;
-    margin-bottom: 0;
+    display: none;
   }
 
   [data-reveal] {

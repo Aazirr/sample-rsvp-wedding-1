@@ -130,3 +130,14 @@ Checklist:
 - [x] Move the mobile photo stack into its own centered stage after scroll.
 - [x] Center the stacked hero cards from the mobile viewport instead of left offsets.
 - [x] Rebuild and verify the two-step mobile hero presentation.
+
+## Phase 12 - Mobile Hero Whitespace Bug Fix
+
+Status: Complete
+
+Checklist:
+
+- [x] Identify the scroll cue flex spacer causing the large mobile whitespace.
+- [x] Move the mobile scroll cue out of normal layout flow.
+- [x] Reduce the mobile photo stage height so it no longer creates excess blank space.
+- [x] Rebuild and verify the corrected mobile hero measurements.
