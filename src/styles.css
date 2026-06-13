@@ -148,8 +148,7 @@ a {
 .hero-kicker,
 .section-intro,
 .detail-title,
-.aside-title,
-.preview-copy p {
+.aside-title {
   margin: 0;
   font-size: 0.9rem;
   font-weight: 600;
@@ -221,13 +220,11 @@ a {
   padding: 10px 2px 0;
 }
 
-.hero-intro,
 .hero-meta p,
 .detail-body p,
 .invitation-note p,
 .form-actions p,
 .control-head p,
-.preview-copy span,
 .footer p,
 .footer small {
   margin: 0;
@@ -235,12 +232,6 @@ a {
   line-height: 1.65;
   font-size: 1rem;
   text-wrap: pretty;
-}
-
-.hero-intro {
-  max-width: 34ch;
-  color: var(--ink);
-  font-size: 1.12rem;
 }
 
 .hero-meta {
@@ -320,6 +311,11 @@ a {
   gap: 26px;
 }
 
+.gallery-grid {
+  display: grid;
+  gap: 18px;
+}
+
 .details-list {
   display: grid;
   border-top: 1px solid var(--line);
@@ -354,18 +350,15 @@ a {
   line-height: 0.95;
 }
 
-.details-aside {
-  display: grid;
-  gap: 18px;
-}
-
-.details-photo,
-.rsvp-photo,
-.preview-photo {
+.gallery-photo {
   width: 100%;
   aspect-ratio: 4 / 5;
   object-fit: cover;
   border-radius: 8px;
+}
+
+.gallery-card {
+  margin: 0;
 }
 
 .expectations {
@@ -387,12 +380,6 @@ a {
   align-items: center;
   gap: 12px;
   color: var(--ink);
-}
-
-.rsvp-sidebar {
-  display: grid;
-  gap: 18px;
-  align-content: start;
 }
 
 .invitation-note {
@@ -594,26 +581,6 @@ textarea:focus,
   object-fit: cover;
 }
 
-.customize-preview {
-  display: grid;
-  gap: 18px;
-  align-content: start;
-}
-
-.preview-copy {
-  display: grid;
-  gap: 6px;
-  padding-top: 6px;
-}
-
-.preview-copy p {
-  color: var(--accent-strong);
-}
-
-.preview-copy span {
-  color: var(--muted);
-}
-
 .footer {
   display: grid;
   gap: 8px;
@@ -646,14 +613,19 @@ textarea:focus,
   }
 
   .details-layout,
+  .gallery-grid,
   .rsvp-layout,
   .customize-layout {
     grid-template-columns: minmax(0, 1.2fr) minmax(300px, 0.8fr);
     align-items: start;
   }
 
+  .gallery-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
   .rsvp-layout {
-    grid-template-columns: minmax(280px, 0.72fr) minmax(0, 1.28fr);
+    grid-template-columns: minmax(280px, 0.52fr) minmax(0, 1.48fr);
   }
 
   .form-grid {
@@ -723,10 +695,6 @@ textarea:focus,
     padding: 26px 20px 0;
   }
 
-  .hero-intro {
-    max-width: 24ch;
-  }
-
   .hero-meta {
     justify-items: center;
     width: min(100%, 28rem);
@@ -747,6 +715,7 @@ textarea:focus,
   }
 
   .details,
+  .gallery,
   .customize {
     margin: 0 -18px;
     padding-left: 18px;
@@ -771,6 +740,7 @@ textarea:focus,
   }
 
   .details-layout,
+  .gallery-grid,
   .rsvp-layout,
   .customize-layout {
     justify-items: center;
@@ -779,8 +749,7 @@ textarea:focus,
   .details-list,
   .rsvp-form,
   .customize-controls,
-  .customize-preview,
-  .details-aside,
+  .gallery-grid,
   .rsvp-sidebar {
     width: min(100%, 32rem);
   }
@@ -796,18 +765,18 @@ textarea:focus,
     justify-items: center;
   }
 
-  .details-photo,
-  .rsvp-photo,
-  .preview-photo {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-photo {
     aspect-ratio: 3 / 4;
   }
 
   .expectations,
   .expectations ul,
-  .rsvp-sidebar,
   .invitation-note,
-  .customize-preview,
-  .preview-copy,
+  .rsvp-sidebar,
   .footer {
     justify-items: center;
     text-align: center;

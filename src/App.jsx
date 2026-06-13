@@ -56,6 +56,11 @@ const typeOptions = [
 ];
 
 const previewPhotos = ["/photos/1.jpg", "/photos/6.jpg", "/photos/7.jpg"];
+const galleryPhotos = [
+  { src: "/photos/7.jpg", alt: "Amelia and Theo standing beside trees outdoors" },
+  { src: "/photos/6.jpg", alt: "Amelia and Theo smiling together outdoors" },
+  { src: "/photos/4.jpg", alt: "Outdoor portrait of the couple together" },
+];
 
 function App() {
   const [theme, setTheme] = useState("blush");
@@ -147,11 +152,6 @@ function App() {
           </figure>
 
           <div className="hero-copy" data-reveal>
-            <p className="hero-intro">
-              A clean, practical RSVP website for couples who want a beautiful
-              online invitation without extra complexity.
-            </p>
-
             <div className="hero-meta" aria-label="Event summary">
               <p>Tagaytay City, Philippines</p>
               <p>Outdoor ceremony, seated dinner, acoustic after-party set</p>
@@ -170,10 +170,6 @@ function App() {
 
         <section className="section details" id="details" data-reveal>
           <div className="section-copy">
-            <p className="section-intro">
-              Everything your guests need appears early in the scroll, so the site
-              feels helpful before it feels decorative.
-            </p>
             <h2>Event details</h2>
           </div>
 
@@ -191,24 +187,31 @@ function App() {
               ))}
             </div>
 
-            <aside className="details-aside">
-              <img
-                className="details-photo"
-                src="/photos/7.jpg"
-                alt="Amelia and Theo standing beside trees outdoors"
-              />
-              <div className="expectations">
-                <p className="aside-title">What guests can expect</p>
-                <ul>
-                  {expectations.map((item) => (
-                    <li key={item.label}>
-                      <item.Icon aria-hidden="true" />
-                      <span>{item.label}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </aside>
+            <div className="expectations">
+              <p className="aside-title">What guests can expect</p>
+              <ul>
+                {expectations.map((item) => (
+                  <li key={item.label}>
+                    <item.Icon aria-hidden="true" />
+                    <span>{item.label}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section className="section gallery" data-reveal>
+          <div className="section-copy">
+            <h2>Gallery</h2>
+          </div>
+
+          <div className="gallery-grid" aria-label="Wedding gallery">
+            {galleryPhotos.map((photo) => (
+              <figure className="gallery-card" key={photo.src}>
+                <img className="gallery-photo" src={photo.src} alt={photo.alt} />
+              </figure>
+            ))}
           </div>
         </section>
 
@@ -229,12 +232,6 @@ function App() {
                 <p>Sunday, November 22, 2026</p>
                 <p>Alta Veranda, Tagaytay City</p>
               </div>
-
-              <img
-                className="rsvp-photo"
-                src="/photos/6.jpg"
-                alt="Amelia and Theo smiling together outdoors"
-              />
             </div>
 
             <form className="rsvp-form" onSubmit={handleSubmit}>
@@ -414,19 +411,6 @@ function App() {
                     </button>
                   ))}
                 </div>
-              </div>
-            </div>
-
-            <div className="customize-preview">
-              <img
-                className="preview-photo"
-                src={previewPhoto}
-                alt="Selected wedding portrait preview"
-              />
-              <div className="preview-copy">
-                <p>Starter package preview</p>
-                <h3>Amelia &amp; Theo</h3>
-                <span>November 22, 2026 • Tagaytay City</span>
               </div>
             </div>
           </div>

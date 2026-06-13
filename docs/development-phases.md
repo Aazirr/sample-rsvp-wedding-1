@@ -219,3 +219,15 @@ Checklist:
 - [x] Improve vertical centering in the mobile hero presentation.
 - [x] Add more cinematic full-bleed section staging and atmosphere on mobile.
 - [x] Rebuild and visually verify the updated mobile experience.
+
+## Phase 20 - Gallery Consolidation
+
+Status: Complete
+
+Checklist:
+
+- [x] Remove the extra explanatory copy lines requested by the user.
+- [x] Keep the hero photo untouched as the primary image section.
+- [x] Consolidate all remaining non-hero photos into a single gallery section.
+- [x] Remove scattered photo placements from the details, RSVP, and customization sections.
+- [x] Rebuild and visually verify the simplified photo structure.
