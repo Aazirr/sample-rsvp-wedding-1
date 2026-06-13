@@ -1060,7 +1060,7 @@ textarea:focus,
   .page {
     width: 100%;
     padding-top: 0;
-    padding-bottom: 36px;
+    padding-bottom: 12px;
   }
 
   .hero,
@@ -1138,7 +1138,7 @@ textarea:focus,
 
   .section {
     padding-top: 58px;
-    padding-bottom: 58px;
+    padding-bottom: 28px;
   }
 
   .details,
@@ -1240,9 +1240,9 @@ textarea:focus,
     text-align: center;
   }
 
-  .pair-row-two,
-  .pair-row-one {
-    grid-template-columns: 1fr;
+  .footer {
+    padding-top: 22px;
+    padding-bottom: 6px;
   }
 
   .expectations li {
@@ -1275,6 +1275,10 @@ textarea:focus,
     grid-template-columns: 1fr;
     justify-items: center;
     text-align: center;
+  }
+
+  body {
+    background-attachment: scroll;
   }
 }
 

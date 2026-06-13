@@ -282,3 +282,14 @@ Checklist:
 - [x] Keep the wedding-party pairing side by side on mobile where the width allows it.
 - [x] Refine the ceremony and sponsor panels with a sleeker visual treatment on desktop and mobile.
 - [x] Rebuild and visually verify the polished ceremony sections across desktop and mobile.
+
+## Phase 26 - Mobile Bottom Space Fix
+
+Status: Complete
+
+Checklist:
+
+- [x] Identify likely sources of the long blank space at the bottom of the mobile page.
+- [x] Remove the mobile fixed-background behavior that can cause end-of-page whitespace artifacts.
+- [x] Tighten the mobile section and footer spacing to reduce the dead tail at the end of the page.
+- [x] Rebuild and visually verify the bottom edge on mobile.
