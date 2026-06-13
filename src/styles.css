@@ -49,6 +49,11 @@ body {
   background: var(--bg);
   color: var(--ink);
   font-family: var(--body-font);
+  background-image:
+    radial-gradient(circle at top left, color-mix(in oklab, var(--accent-soft) 78%, transparent 22%), transparent 34%),
+    radial-gradient(circle at 85% 18%, color-mix(in oklab, var(--accent-soft) 58%, transparent 42%), transparent 28%),
+    linear-gradient(180deg, color-mix(in oklab, var(--surface) 92%, white 8%), var(--bg));
+  background-attachment: fixed;
 }
 
 img {
@@ -69,12 +74,16 @@ a {
 
 .app-shell {
   min-height: 100vh;
+  position: relative;
+  overflow: clip;
 }
 
 .page {
   width: min(1160px, calc(100% - 32px));
   margin: 0 auto;
   padding: 18px 0 40px;
+  position: relative;
+  z-index: 1;
 }
 
 [data-reveal] {
@@ -87,12 +96,7 @@ a {
   gap: 24px;
 }
 
-.hero-visual,
-.hero-copy,
-.details,
-.rsvp,
-.customize,
-.footer {
+.reveal-ready [data-reveal] {
   opacity: 0;
   transform: translateY(28px);
   transition:
@@ -100,7 +104,7 @@ a {
     transform 700ms ease;
 }
 
-.is-visible {
+.reveal-ready [data-reveal].is-visible {
   opacity: 1;
   transform: translateY(0);
 }
@@ -138,6 +142,7 @@ a {
   gap: 14px;
   padding: 28px 22px;
   color: white;
+  text-shadow: 0 14px 40px rgba(0, 0, 0, 0.32);
 }
 
 .hero-kicker,
@@ -200,6 +205,14 @@ a {
   padding-top: 12px;
   font-size: 1rem;
   line-height: 1.4;
+}
+
+.hero-subline {
+  max-width: 22ch;
+  margin: 0;
+  font-size: 0.98rem;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.88);
 }
 
 .hero-copy {
@@ -280,6 +293,7 @@ a {
 .section {
   padding: 68px 0;
   border-top: 1px solid var(--line);
+  position: relative;
 }
 
 .section-copy {
@@ -648,8 +662,182 @@ textarea:focus,
 }
 
 @media (max-width: 879px) {
+  .page {
+    width: 100%;
+    padding-top: 0;
+    padding-bottom: 36px;
+  }
+
+  .hero,
+  .section,
+  .footer {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .hero {
+    gap: 0;
+  }
+
+  .hero-visual {
+    min-height: 100svh;
+    margin: 0 -18px;
+    border-radius: 0;
+  }
+
+  .hero-overlay {
+    min-height: 100svh;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 44px 24px;
+  }
+
+  .hero-kicker,
+  .hero-date,
+  .hero-subline {
+    width: auto;
+    text-align: center;
+  }
+
+  .hero-date {
+    border-top: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.34);
+    padding-top: 0;
+    padding-bottom: 12px;
+  }
+
+  .hero-subline {
+    max-width: 24ch;
+  }
+
+  .hero-name:last-child,
+  .hero h1 em {
+    margin-left: 0;
+  }
+
+  .hero-copy {
+    justify-items: center;
+    text-align: center;
+    margin-top: -42px;
+    padding: 26px 20px 0;
+  }
+
+  .hero-intro {
+    max-width: 24ch;
+  }
+
+  .hero-meta {
+    justify-items: center;
+    width: min(100%, 28rem);
+  }
+
+  .hero-actions {
+    width: min(100%, 28rem);
+    justify-content: center;
+  }
+
   .button {
     width: 100%;
+  }
+
+  .section {
+    padding-top: 58px;
+    padding-bottom: 58px;
+  }
+
+  .details,
+  .customize {
+    margin: 0 -18px;
+    padding-left: 18px;
+    padding-right: 18px;
+    background:
+      linear-gradient(180deg, color-mix(in oklab, var(--surface-soft) 74%, white 26%), color-mix(in oklab, var(--surface) 94%, white 6%));
+  }
+
+  .rsvp {
+    margin: 0 -18px;
+    padding-left: 18px;
+    padding-right: 18px;
+    background:
+      linear-gradient(180deg, color-mix(in oklab, var(--accent-soft) 18%, white 82%), color-mix(in oklab, var(--surface) 92%, white 8%));
+  }
+
+  .section-copy {
+    justify-items: center;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .details-layout,
+  .rsvp-layout,
+  .customize-layout {
+    justify-items: center;
+  }
+
+  .details-list,
+  .rsvp-form,
+  .customize-controls,
+  .customize-preview,
+  .details-aside,
+  .rsvp-sidebar {
+    width: min(100%, 32rem);
+  }
+
+  .detail-item {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .detail-body {
+    justify-items: center;
+  }
+
+  .details-photo,
+  .rsvp-photo,
+  .preview-photo {
+    aspect-ratio: 3 / 4;
+  }
+
+  .expectations,
+  .expectations ul,
+  .rsvp-sidebar,
+  .invitation-note,
+  .customize-preview,
+  .preview-copy,
+  .footer {
+    justify-items: center;
+    text-align: center;
+  }
+
+  .expectations li {
+    justify-content: center;
+  }
+
+  .rsvp-form {
+    padding: 24px 20px;
+  }
+
+  .choice-row {
+    justify-content: center;
+  }
+
+  .control-block {
+    justify-items: center;
+    text-align: center;
+  }
+
+  .control-head {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+  }
+
+  .photo-row {
+    justify-content: center;
   }
 }
 
@@ -663,15 +851,5 @@ textarea:focus,
   *::after {
     animation: none !important;
     transition: none !important;
-  }
-
-  .hero-visual,
-  .hero-copy,
-  .details,
-  .rsvp,
-  .customize,
-  .footer {
-    opacity: 1;
-    transform: none;
   }
 }

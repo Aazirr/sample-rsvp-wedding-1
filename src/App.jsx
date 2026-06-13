@@ -89,6 +89,8 @@ function App() {
       return undefined;
     }
 
+    document.body.classList.add("reveal-ready");
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -105,7 +107,10 @@ function App() {
 
     targets.forEach((target) => observer.observe(target));
 
-    return () => observer.disconnect();
+    return () => {
+      observer.disconnect();
+      document.body.classList.remove("reveal-ready");
+    };
   }, []);
 
   const handleChange = (event) => {
@@ -137,6 +142,7 @@ function App() {
                 <span className="hero-name">Theo</span>
               </h1>
               <p className="hero-date">November 22, 2026</p>
+              <p className="hero-subline">A candlelit garden celebration in Tagaytay City</p>
             </figcaption>
           </figure>
 
