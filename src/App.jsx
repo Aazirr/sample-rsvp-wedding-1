@@ -1,6 +1,8 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState, useCallback } from "react";
 import {
   CalendarDays,
+  ChevronLeft,
+  ChevronRight,
   Clock3,
   MapPin,
   PaintbrushVertical,
@@ -57,9 +59,14 @@ const typeOptions = [
 
 const previewPhotos = ["/photos/1.jpg", "/photos/6.jpg", "/photos/7.jpg"];
 const galleryPhotos = [
-  { src: "/photos/7.jpg", alt: "Amelia and Theo standing beside trees outdoors" },
+  { src: "/photos/1.jpg", alt: "Amelia and Theo embracing outdoors in Tagaytay" },
   { src: "/photos/6.jpg", alt: "Amelia and Theo smiling together outdoors" },
+  { src: "/photos/7.jpg", alt: "Amelia and Theo standing beside trees outdoors" },
+  { src: "/photos/2.jpg", alt: "Close-up portrait of the couple" },
+  { src: "/photos/3.jpg", alt: "Amelia and Theo walking hand in hand" },
   { src: "/photos/4.jpg", alt: "Outdoor portrait of the couple together" },
+  { src: "/photos/5.jpg", alt: "Amelia and Theo sharing a quiet moment" },
+  { src: "/photos/9.jpg", alt: "Candid moment of the couple" },
 ];
 
 function App() {
@@ -81,6 +88,45 @@ function App() {
   );
 
   const [formData, setFormData] = useState(initialForm);
+
+  /* ── Carousel state ── */
+  const [activeSlide, setActiveSlide] = useState(0);
+  const slideCount = galleryPhotos.length;
+  const touchRef = useRef({ startX: 0, startY: 0, dragging: false });
+  const slideInterval = useRef(null);
+
+  const goToSlide = useCallback((index) => {
+    setActiveSlide((index + slideCount) % slideCount);
+  }, [slideCount]);
+
+  const nextSlide = useCallback(() => goToSlide(activeSlide + 1), [activeSlide, goToSlide]);
+  const prevSlide = useCallback(() => goToSlide(activeSlide - 1), [activeSlide, goToSlide]);
+
+  const onTouchStart = (e) => {
+    touchRef.current = { startX: e.touches ? e.touches[0].clientX : e.clientX, startY: e.touches ? e.touches[0].clientY : e.clientY, dragging: true };
+  };
+
+  const onTouchEnd = (e) => {
+    if (!touchRef.current.dragging) return;
+    const endX = e.changedTouches ? e.changedTouches[0].clientX : e.clientX;
+    const endY = e.changedTouches ? e.changedTouches[0].clientY : e.clientY;
+    const dx = endX - touchRef.current.startX;
+    const dy = endY - touchRef.current.startY;
+    touchRef.current.dragging = false;
+    if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 40) {
+      dx > 0 ? prevSlide() : nextSlide();
+    }
+  };
+
+  /* ── Keyboard nav ── */
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.key === "ArrowLeft") prevSlide();
+      if (e.key === "ArrowRight") nextSlide();
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [prevSlide, nextSlide]);
 
   useEffect(() => {
     document.body.dataset.theme = theme;
@@ -231,12 +277,66 @@ function App() {
             <h2>Gallery</h2>
           </div>
 
-          <div className="gallery-grid" aria-label="Wedding gallery">
-            {galleryPhotos.map((photo) => (
-              <figure className="gallery-card" key={photo.src}>
-                <img className="gallery-photo" src={photo.src} alt={photo.alt} />
-              </figure>
-            ))}
+          <div
+            className="gallery-carousel"
+            aria-label="Wedding gallery slideshow"
+            role="region"
+            aria-roledescription="carousel"
+            aria-label={`Photo ${activeSlide + 1} of ${slideCount}`}
+          >
+            <div
+              className="carousel-track"
+              onMouseDown={onTouchStart}
+              onMouseUp={onTouchEnd}
+              onTouchStart={onTouchStart}
+              onTouchEnd={onTouchEnd}
+            >
+              {galleryPhotos.map((photo, i) => (
+                <div
+                  className={`carousel-slide${i === activeSlide ? " is-active" : ""}`}
+                  key={photo.src}
+                  aria-hidden={i !== activeSlide}
+                >
+                  <img
+                    src={photo.src}
+                    alt={photo.alt}
+                    draggable="false"
+                  />
+                </div>
+              ))}
+
+              <button
+                className="carousel-arrow carousel-prev"
+                onClick={prevSlide}
+                aria-label="Previous photo"
+              >
+                <ChevronLeft />
+              </button>
+              <button
+                className="carousel-arrow carousel-next"
+                onClick={nextSlide}
+                aria-label="Next photo"
+              >
+                <ChevronRight />
+              </button>
+            </div>
+
+            <div className="carousel-dots" role="tablist" aria-label="Slide selector">
+              {galleryPhotos.map((_, i) => (
+                <button
+                  key={i}
+                  className={`carousel-dot${i === activeSlide ? " is-active" : ""}`}
+                  onClick={() => goToSlide(i)}
+                  role="tab"
+                  aria-selected={i === activeSlide}
+                  aria-label={`Photo ${i + 1}`}
+                />
+              ))}
+            </div>
+
+            <p className="carousel-counter" aria-live="polite">
+              {activeSlide + 1} / {slideCount}
+            </p>
           </div>
         </section>
 
