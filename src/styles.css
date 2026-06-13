@@ -11,6 +11,7 @@
   --shadow: 0 24px 60px rgba(83, 58, 46, 0.1);
   --heading-font: "Cormorant Garamond", Georgia, serif;
   --body-font: "Manrope", "Segoe UI", sans-serif;
+  --hero-progress: 0;
 }
 
 body[data-theme="sage"] {
@@ -801,9 +802,13 @@ textarea:focus,
 
   .hero {
     gap: 0;
+    position: sticky;
+    top: 0;
+    z-index: 0;
     align-content: start;
-    min-height: auto;
+    min-height: 100svh;
     padding-top: 0;
+    border-bottom: 0;
   }
 
   .hero-copy {
@@ -867,6 +872,27 @@ textarea:focus,
 
   .hero-scroll {
     display: none;
+  }
+
+  .hero[data-reveal] {
+    opacity: calc(1 - (var(--hero-progress) * 0.92));
+    transform: translateY(calc(var(--hero-progress) * -18px));
+    transition: none;
+  }
+
+  .details-section {
+    position: relative;
+    z-index: 2;
+    margin-top: -14svh;
+    padding-top: calc(14svh + 34px);
+    background: linear-gradient(180deg, rgba(255, 254, 253, 0.78), var(--bg) 18%);
+    border-top: 1px solid var(--line);
+  }
+
+  .details-section[data-reveal] {
+    opacity: calc(0.2 + (var(--hero-progress) * 0.8));
+    transform: translateY(calc(52px * (1 - var(--hero-progress))));
+    transition: none;
   }
 
   [data-reveal] {

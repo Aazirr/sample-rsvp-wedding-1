@@ -66,6 +66,49 @@ function App() {
   }, [theme, typeMood]);
 
   useEffect(() => {
+    const root = document.documentElement;
+    const mobileQuery = window.matchMedia("(max-width: 760px)");
+    let frameId = 0;
+
+    const applyProgress = () => {
+      if (!mobileQuery.matches) {
+        root.style.setProperty("--hero-progress", "0");
+        return;
+      }
+
+      const maxScroll = Math.max(window.innerHeight * 0.92, 1);
+      const progress = Math.min(Math.max(window.scrollY / maxScroll, 0), 1);
+      root.style.setProperty("--hero-progress", progress.toFixed(3));
+    };
+
+    const requestProgress = () => {
+      if (frameId) {
+        return;
+      }
+
+      frameId = window.requestAnimationFrame(() => {
+        frameId = 0;
+        applyProgress();
+      });
+    };
+
+    applyProgress();
+    window.addEventListener("scroll", requestProgress, { passive: true });
+    window.addEventListener("resize", requestProgress);
+    mobileQuery.addEventListener("change", requestProgress);
+
+    return () => {
+      if (frameId) {
+        window.cancelAnimationFrame(frameId);
+      }
+      window.removeEventListener("scroll", requestProgress);
+      window.removeEventListener("resize", requestProgress);
+      mobileQuery.removeEventListener("change", requestProgress);
+      root.style.setProperty("--hero-progress", "0");
+    };
+  }, []);
+
+  useEffect(() => {
     const revealTargets = Array.from(document.querySelectorAll("[data-reveal]"));
     const mobileQuery = window.matchMedia("(max-width: 760px)");
     let observer;

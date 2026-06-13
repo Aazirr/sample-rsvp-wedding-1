@@ -141,3 +141,14 @@ Checklist:
 - [x] Move the mobile scroll cue out of normal layout flow.
 - [x] Reduce the mobile photo stage height so it no longer creates excess blank space.
 - [x] Rebuild and verify the corrected mobile hero measurements.
+
+## Phase 13 - Mobile Hero Scroll Replacement
+
+Status: Complete
+
+Checklist:
+
+- [x] Add a scroll-driven mobile hero fade tied to viewport progress.
+- [x] Keep the hero pinned while the next section replaces it.
+- [x] Bring the event details section upward as the hero fades out.
+- [x] Rebuild and verify the mobile transition behavior.
