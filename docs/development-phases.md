@@ -262,3 +262,13 @@ Checklist:
 - [x] Move the wedding party and sponsors sections higher into the page flow.
 - [x] Redesign the entourage and sponsors layout for a more suitable presentation.
 - [x] Rebuild and visually verify the updated page order and layout across desktop and mobile.
+
+## Phase 24 - Ceremony Pair Layout Refinement
+
+Status: Complete
+
+Checklist:
+
+- [x] Identify the ceremony roles that should read as side-by-side pairs.
+- [x] Restructure the wedding party section so Matron of Honor pairs with Best Man and Bridesmaids pairs with Groomsmen.
+- [x] Rebuild and visually verify the refined paired layout on desktop and mobile.

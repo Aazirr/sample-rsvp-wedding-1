@@ -131,6 +131,10 @@ const weddingPartyGroups = [
   },
 ];
 
+const weddingPartyMap = Object.fromEntries(
+  weddingPartyGroups.map((group) => [group.title, group.members])
+);
+
 const sponsors = {
   primary: [
     "Mr. and Mrs. Eduardo Sy",
@@ -398,21 +402,92 @@ function App() {
             </div>
 
             <div className="entourage-grid" aria-label="Wedding party">
-            {weddingPartyGroups.map((group) => (
-              <article
-                className={`party-group${group.members.length === 1 ? " is-single" : ""}${
-                  group.title.includes("Parents") ? " is-featured" : ""
-                }`}
-                key={group.title}
-              >
-                <p className="party-role">{group.title}</p>
-                <ul className="party-list">
-                  {group.members.map((member) => (
-                    <li key={member}>{member}</li>
-                  ))}
-                </ul>
-              </article>
-            ))}
+              <div className="pair-row pair-row-two">
+                <article className="party-group is-featured">
+                  <p className="party-role">Parents of the Bride</p>
+                  <ul className="party-list">
+                    {weddingPartyMap["Parents of the Bride"].map((member) => (
+                      <li key={member}>{member}</li>
+                    ))}
+                  </ul>
+                </article>
+                <article className="party-group is-featured">
+                  <p className="party-role">Parents of the Groom</p>
+                  <ul className="party-list">
+                    {weddingPartyMap["Parents of the Groom"].map((member) => (
+                      <li key={member}>{member}</li>
+                    ))}
+                  </ul>
+                </article>
+              </div>
+
+              <div className="pair-row pair-row-two">
+                <article className="party-group">
+                  <p className="party-role">Matron of Honor</p>
+                  <ul className="party-list">
+                    {weddingPartyMap["Matron of Honor"].map((member) => (
+                      <li key={member}>{member}</li>
+                    ))}
+                  </ul>
+                </article>
+                <article className="party-group">
+                  <p className="party-role">Best Man</p>
+                  <ul className="party-list">
+                    {weddingPartyMap["Best Man"].map((member) => (
+                      <li key={member}>{member}</li>
+                    ))}
+                  </ul>
+                </article>
+              </div>
+
+              <div className="pair-row pair-row-two">
+                <article className="party-group">
+                  <p className="party-role">Bridesmaids</p>
+                  <ul className="party-list">
+                    {weddingPartyMap["Bridesmaids"].map((member) => (
+                      <li key={member}>{member}</li>
+                    ))}
+                  </ul>
+                </article>
+                <article className="party-group">
+                  <p className="party-role">Groomsmen</p>
+                  <ul className="party-list">
+                    {weddingPartyMap["Groomsmen"].map((member) => (
+                      <li key={member}>{member}</li>
+                    ))}
+                  </ul>
+                </article>
+              </div>
+
+              <div className="pair-row pair-row-two">
+                <article className="party-group">
+                  <p className="party-role">Flower Girls</p>
+                  <ul className="party-list">
+                    {weddingPartyMap["Flower Girls"].map((member) => (
+                      <li key={member}>{member}</li>
+                    ))}
+                  </ul>
+                </article>
+                <article className="party-group">
+                  <p className="party-role">Flower Ladies</p>
+                  <ul className="party-list">
+                    {weddingPartyMap["Flower Ladies"].map((member) => (
+                      <li key={member}>{member}</li>
+                    ))}
+                  </ul>
+                </article>
+              </div>
+
+              <div className="pair-row pair-row-one">
+                <article className="party-group">
+                  <p className="party-role">Ring Bearers</p>
+                  <ul className="party-list">
+                    {weddingPartyMap["Ring Bearers"].map((member) => (
+                      <li key={member}>{member}</li>
+                    ))}
+                  </ul>
+                </article>
+              </div>
             </div>
           </div>
         </section>

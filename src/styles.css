@@ -454,8 +454,20 @@ a {
 
 .entourage-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-  gap: 18px 20px;
+  gap: 18px;
+}
+
+.pair-row {
+  display: grid;
+  gap: 18px;
+}
+
+.pair-row-two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.pair-row-one {
+  grid-template-columns: minmax(0, 1fr);
 }
 
 .party-group,
@@ -465,11 +477,6 @@ a {
   align-content: start;
   padding: 18px 0 22px;
   border-top: 1px solid var(--line);
-}
-
-.party-group.is-featured,
-.primary-sponsors {
-  grid-column: span 2;
 }
 
 .party-role {
@@ -939,6 +946,14 @@ textarea:focus,
     column-gap: 34px;
   }
 
+  .pair-row-two {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .pair-row-one {
+    max-width: 48%;
+  }
+
   .gallery-carousel {
     max-width: 780px;
     overflow: hidden;
@@ -1147,7 +1162,9 @@ textarea:focus,
   .entourage-grid,
   .sponsors-layout,
   .secondary-sponsors,
-  .primary-sponsors {
+  .primary-sponsors,
+  .pair-row,
+  .pair-row-one {
     width: min(100%, 32rem);
   }
 
@@ -1203,9 +1220,9 @@ textarea:focus,
     text-align: center;
   }
 
-  .party-group.is-featured,
-  .primary-sponsors {
-    grid-column: auto;
+  .pair-row-two,
+  .pair-row-one {
+    grid-template-columns: 1fr;
   }
 
   .expectations li {

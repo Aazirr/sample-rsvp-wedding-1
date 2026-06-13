@@ -76,6 +76,10 @@ Current custom additions requested for this implementation:
 - Primary sponsors section
 - Secondary sponsors section
 
+Layout note:
+
+- The wedding party section uses paired rows so related roles read together, such as Matron of Honor with Best Man and Bridesmaids with Groomsmen.
+
 ## Content Structure
 
 ### 1. Hero Invitation
