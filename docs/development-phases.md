@@ -196,3 +196,15 @@ Checklist:
 - [x] Reduce the mobile photo band height and remove the dead white handoff.
 - [x] Add bridging copy before Event Details for a softer transition.
 - [x] Rebuild and visually verify the updated mobile flow.
+
+## Phase 18 - Full Frontend Rebuild
+
+Status: Complete
+
+Checklist:
+
+- [x] Create the missing `PRODUCT.md` design context required for the rebuild workflow.
+- [x] Remove the previous RSVP frontend implementation and rewrite the app from scratch.
+- [x] Keep the existing React and Vite tech stack while rebuilding the interface.
+- [x] Reintroduce the required starter package sections with fresh structure and styling.
+- [x] Build and visually verify the rebuilt experience on mobile.
