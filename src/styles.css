@@ -337,7 +337,9 @@ textarea {
   top: 28px;
   left: 18px;
   z-index: 2;
-  transform: rotate(-6deg);
+  --card-shift: 0px;
+  --card-tilt: -6deg;
+  transform: translateX(var(--card-shift)) rotate(var(--card-tilt));
 }
 
 .hero-stack-back {
@@ -345,12 +347,14 @@ textarea {
   left: 118px;
   z-index: 1;
   opacity: 0.92;
-  transform: rotate(7deg);
+  --card-shift: 0px;
+  --card-tilt: 7deg;
+  transform: translateX(var(--card-shift)) rotate(var(--card-tilt));
 }
 
 .hero-stack-front:hover,
 .hero-stack-back:hover {
-  transform: translateY(-4px) rotate(var(--card-tilt, 0deg));
+  transform: translateX(var(--card-shift)) translateY(-4px) rotate(var(--card-tilt, 0deg));
 }
 
 .hero-photo {
@@ -365,14 +369,6 @@ textarea {
 .hero-photo-back {
   animation: floatPhoto 9s ease-in-out infinite;
   animation-delay: -4.5s;
-}
-
-.hero-stack-front {
-  --card-tilt: -6deg;
-}
-
-.hero-stack-back {
-  --card-tilt: 7deg;
 }
 
 .hero-note-card,
@@ -807,16 +803,16 @@ textarea:focus,
     gap: 0;
     align-content: start;
     min-height: auto;
-    padding-top: 18px;
+    padding-top: 10px;
   }
 
   .hero-copy {
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: calc(100svh - 28px);
+    min-height: calc(100svh - 10px);
     justify-content: center;
-    padding-block: 8px 18px;
+    padding-block: 0;
   }
 
   .hero h1 {
@@ -841,13 +837,14 @@ textarea:focus,
   }
 
   .hero-media {
-    min-height: 356px;
+    min-height: 100svh;
     margin-top: 0;
+    place-items: center;
   }
 
   .hero-stack {
-    width: min(100%, 326px);
-    height: 356px;
+    width: min(100%, 332px);
+    height: min(100svh - 48px, 420px);
   }
 
   .hero-stack-button {
@@ -856,20 +853,22 @@ textarea:focus,
   }
 
   .hero-stack-front {
-    top: 10px;
-    left: 20px;
+    top: 12px;
+    left: 50%;
+    --card-shift: calc(-50% - 12px);
   }
 
   .hero-stack-back {
-    top: 38px;
-    left: 20px;
+    top: 40px;
+    left: 50%;
+    --card-shift: calc(-50% + 12px);
   }
 
   .hero-scroll {
     display: inline-grid;
     justify-items: center;
     margin-top: auto;
-    padding-top: 22px;
+    padding-top: 18px;
     margin-bottom: 0;
   }
 

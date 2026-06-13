@@ -119,3 +119,14 @@ Checklist:
 - [x] Remove the apparent dead space between the mobile cue and the gallery.
 - [x] Re-center the stacked hero photos horizontally on mobile.
 - [x] Rebuild and verify the corrected mobile hero layout.
+
+## Phase 11 - Mobile Hero Stage Centering
+
+Status: Complete
+
+Checklist:
+
+- [x] Vertically and horizontally center the invitation content in the first mobile screen.
+- [x] Move the mobile photo stack into its own centered stage after scroll.
+- [x] Center the stacked hero cards from the mobile viewport instead of left offsets.
+- [x] Rebuild and verify the two-step mobile hero presentation.
