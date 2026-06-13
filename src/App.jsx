@@ -112,9 +112,34 @@ function App() {
 
     targets.forEach((target) => observer.observe(target));
 
+    /* ── Parallax hero image on scroll ── */
+    const heroImg = document.querySelector(".hero-visual img");
+    let parallaxTicking = false;
+
+    const onScroll = () => {
+      if (!parallaxTicking) {
+        requestAnimationFrame(() => {
+          if (heroImg) {
+            const scrollY = window.scrollY;
+            const heroRect = heroImg.parentElement.getBoundingClientRect();
+            const heroHeight = heroRect.height;
+            const heroTop = heroRect.top + scrollY;
+            const progress = Math.max(0, Math.min(1, (scrollY - heroTop + window.innerHeight) / (heroHeight + window.innerHeight)));
+            const parallaxY = progress * 40;
+            heroImg.style.transform = `scale(${1 + progress * 0.08}) translateY(${parallaxY}px)`;
+          }
+          parallaxTicking = false;
+        });
+        parallaxTicking = true;
+      }
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+
     return () => {
       observer.disconnect();
       document.body.classList.remove("reveal-ready");
+      window.removeEventListener("scroll", onScroll);
     };
   }, []);
 
