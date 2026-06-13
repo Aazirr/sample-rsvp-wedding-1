@@ -439,6 +439,14 @@ a {
   gap: 28px;
 }
 
+.entourage .ceremony-layout,
+.sponsors .ceremony-layout {
+  padding: 22px;
+  border-radius: 18px;
+  background: color-mix(in oklab, var(--surface) 88%, var(--surface-soft) 12%);
+  box-shadow: var(--shadow-soft);
+}
+
 .ceremony-lead {
   display: grid;
   gap: 12px;
@@ -454,12 +462,12 @@ a {
 
 .entourage-grid {
   display: grid;
-  gap: 18px;
+  gap: 16px;
 }
 
 .pair-row {
   display: grid;
-  gap: 18px;
+  gap: 14px;
 }
 
 .pair-row-two {
@@ -475,8 +483,10 @@ a {
   display: grid;
   gap: 14px;
   align-content: start;
-  padding: 18px 0 22px;
-  border-top: 1px solid var(--line);
+  padding: 16px 16px 18px;
+  border: 1px solid color-mix(in oklab, var(--line) 70%, white 30%);
+  border-radius: 16px;
+  background: color-mix(in oklab, var(--surface) 96%, var(--accent-soft) 4%);
 }
 
 .party-role {
@@ -498,7 +508,7 @@ a {
 
 .party-list li {
   color: var(--ink);
-  font-size: 1rem;
+  font-size: 0.98rem;
   line-height: 1.6;
   text-wrap: pretty;
 }
@@ -514,7 +524,7 @@ a {
 }
 
 .sponsors-layout .sponsor-panel {
-  padding-top: 20px;
+  padding-top: 16px;
 }
 
 .primary-sponsors .party-list {
@@ -951,7 +961,17 @@ textarea:focus,
   }
 
   .pair-row-one {
-    max-width: 48%;
+    max-width: 42%;
+  }
+
+  .entourage .ceremony-layout,
+  .sponsors .ceremony-layout {
+    padding: 28px;
+  }
+
+  .party-group,
+  .sponsor-panel {
+    padding: 18px 18px 20px;
   }
 
   .gallery-carousel {
@@ -1229,6 +1249,15 @@ textarea:focus,
     justify-content: center;
   }
 
+  .pair-row-two {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .pair-row-one {
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 100%;
+  }
+
   .rsvp-form {
     padding: 24px 20px;
   }
@@ -1246,10 +1275,6 @@ textarea:focus,
     grid-template-columns: 1fr;
     justify-items: center;
     text-align: center;
-  }
-
-  .photo-row {
-    justify-content: center;
   }
 }
 

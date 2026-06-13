@@ -272,3 +272,13 @@ Checklist:
 - [x] Identify the ceremony roles that should read as side-by-side pairs.
 - [x] Restructure the wedding party section so Matron of Honor pairs with Best Man and Bridesmaids pairs with Groomsmen.
 - [x] Rebuild and visually verify the refined paired layout on desktop and mobile.
+
+## Phase 25 - Slick Ceremony Card Polish
+
+Status: Complete
+
+Checklist:
+
+- [x] Keep the wedding-party pairing side by side on mobile where the width allows it.
+- [x] Refine the ceremony and sponsor panels with a sleeker visual treatment on desktop and mobile.
+- [x] Rebuild and visually verify the polished ceremony sections across desktop and mobile.

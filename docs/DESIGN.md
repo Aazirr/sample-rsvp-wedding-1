@@ -79,6 +79,7 @@ Current custom additions requested for this implementation:
 Layout note:
 
 - The wedding party section uses paired rows so related roles read together, such as Matron of Honor with Best Man and Bridesmaids with Groomsmen.
+- On mobile, the paired rows should still sit side by side whenever space allows so the ceremony details feel compact and intentional.
 
 ## Content Structure
 
