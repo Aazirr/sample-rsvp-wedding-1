@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { CalendarDays, ChevronDown, Clock3, MapPin, Shirt, Sparkles } from "lucide-react";
+import { CalendarDays, Clock3, MapPin, Shirt, Sparkles } from "lucide-react";
 
 const eventDetails = [
   {
@@ -123,8 +123,14 @@ function App() {
   const heroPhotos = [
     { src: "/photos/1.jpg", alt: "Bride and groom portrait" },
     { src: "/photos/7.jpg", alt: "Couple standing beside a tree" },
+    { src: "/photos/4.jpg", alt: "Outdoor full-length portrait of the couple" },
+    { src: "/photos/6.jpg", alt: "Bride and groom smiling outdoors" },
   ];
-  const heroBackIndex = heroFrontIndex === 0 ? 1 : 0;
+  const visibleHeroPhotos = [
+    heroFrontIndex,
+    (heroFrontIndex + 1) % heroPhotos.length,
+    (heroFrontIndex + 2) % heroPhotos.length,
+  ];
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -153,6 +159,9 @@ function App() {
               We would love for you to join us for an intimate garden celebration
               filled with music, candlelight, and good company.
             </p>
+            <p className="hero-actions-note">
+              See the schedule, venue, and dress code before you send your RSVP.
+            </p>
             <div className="hero-actions">
               <a className="button button-primary" href="#rsvp">
                 RSVP Now
@@ -161,49 +170,45 @@ function App() {
                 View Details
               </a>
             </div>
-
-            <a className="hero-scroll" href="#hero-gallery">
-              <span className="hero-scroll-copy">Scroll to photos</span>
-              <span className="hero-scroll-mark" aria-hidden="true">
-                <span className="hero-scroll-line" />
-                <ChevronDown className="hero-scroll-icon" />
-              </span>
-            </a>
           </div>
 
           <div className="hero-media" id="hero-gallery">
             <div className="hero-stack" aria-label="Wedding photo gallery">
-              <button
-                className="hero-stack-button hero-stack-back"
-                type="button"
-                onClick={() => setHeroFrontIndex(heroBackIndex)}
-                aria-label={`Bring ${heroPhotos[heroBackIndex].alt.toLowerCase()} to the front`}
-              >
-                <PhotoFrame
-                  className="hero-photo hero-photo-back"
-                  src={heroPhotos[heroBackIndex].src}
-                  alt={heroPhotos[heroBackIndex].alt}
-                />
-              </button>
+              {visibleHeroPhotos
+                .slice()
+                .reverse()
+                .map((photoIndex, layerIndex) => {
+                  const layerClass = ["hero-stack-far", "hero-stack-mid", "hero-stack-front"][layerIndex];
+                  const photoClass = ["hero-photo-far", "hero-photo-mid", "hero-photo-front"][layerIndex];
+                  const nextPhotoIndex = (heroFrontIndex + 1) % heroPhotos.length;
+                  const targetPhotoIndex = layerClass === "hero-stack-front" ? nextPhotoIndex : photoIndex;
 
-              <button
-                className="hero-stack-button hero-stack-front"
-                type="button"
-                onClick={() => setHeroFrontIndex(heroBackIndex)}
-                aria-label={`Swap to ${heroPhotos[heroBackIndex].alt.toLowerCase()}`}
-              >
-                <PhotoFrame
-                  className="hero-photo hero-photo-front"
-                  src={heroPhotos[heroFrontIndex].src}
-                  alt={heroPhotos[heroFrontIndex].alt}
-                />
-              </button>
+                  return (
+                    <button
+                      key={heroPhotos[photoIndex].src}
+                      className={`hero-stack-button ${layerClass}`}
+                      type="button"
+                      onClick={() => setHeroFrontIndex(targetPhotoIndex)}
+                      aria-label={`Show ${heroPhotos[targetPhotoIndex].alt.toLowerCase()}`}
+                    >
+                      <PhotoFrame
+                        className={`hero-photo ${photoClass}`}
+                        src={heroPhotos[photoIndex].src}
+                        alt={heroPhotos[photoIndex].alt}
+                      />
+                    </button>
+                  );
+                })}
             </div>
+            <p className="hero-media-bridge">
+              A few favorite moments first, then everything your guests need to know.
+            </p>
           </div>
         </header>
 
         <section className="section details-section" id="details" data-reveal style={{ "--reveal-delay": "80ms" }}>
           <div className="section-heading centered">
+            <p className="details-bridge">We can&apos;t wait to celebrate with you in Tagaytay.</p>
             <p className="section-label">Event Details</p>
             <h2>Everything your guests need in one scroll.</h2>
           </div>

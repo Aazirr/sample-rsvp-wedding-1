@@ -184,3 +184,15 @@ Checklist:
 - [x] Remove decorative frame styling that alters the photo presentation.
 - [x] Stop the stacked hero photos from cropping via cover-fit behavior.
 - [x] Preserve the existing layout while showing the images more naturally.
+
+## Phase 17 - Mobile Density And Section Bridging
+
+Status: Complete
+
+Checklist:
+
+- [x] Add context copy to the hero action area so the secondary CTA feels intentional.
+- [x] Increase the mobile collage density with additional stacked photos.
+- [x] Reduce the mobile photo band height and remove the dead white handoff.
+- [x] Add bridging copy before Event Details for a softer transition.
+- [x] Rebuild and visually verify the updated mobile flow.

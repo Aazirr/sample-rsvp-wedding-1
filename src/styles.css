@@ -187,6 +187,14 @@ textarea {
   margin-top: 22px;
 }
 
+.hero-actions-note {
+  max-width: 360px;
+  margin: 18px 0 0;
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
 .hero-copy {
   align-self: center;
   padding-block: 48px;
@@ -338,18 +346,27 @@ textarea {
   transform: translateX(var(--card-shift)) rotate(var(--card-tilt));
 }
 
-.hero-stack-back {
-  top: 86px;
-  left: 118px;
+.hero-stack-mid {
+  top: 72px;
+  left: 84px;
   z-index: 1;
-  opacity: 0.92;
+  opacity: 0.94;
   --card-shift: 0px;
   --card-tilt: 7deg;
   transform: translateX(var(--card-shift)) rotate(var(--card-tilt));
 }
 
-.hero-stack-front:hover,
-.hero-stack-back:hover {
+.hero-stack-far {
+  top: 108px;
+  left: 32px;
+  z-index: 0;
+  opacity: 0.72;
+  --card-shift: 0px;
+  --card-tilt: -9deg;
+  transform: translateX(var(--card-shift)) rotate(var(--card-tilt));
+}
+
+.hero-stack-button:hover {
   transform: translateX(var(--card-shift)) translateY(-4px) rotate(var(--card-tilt, 0deg));
 }
 
@@ -366,9 +383,23 @@ textarea {
   animation: floatPhoto 9s ease-in-out infinite;
 }
 
-.hero-photo-back {
+.hero-photo-mid {
   animation: floatPhoto 9s ease-in-out infinite;
   animation-delay: -4.5s;
+}
+
+.hero-photo-far {
+  animation: floatPhoto 9s ease-in-out infinite;
+  animation-delay: -2.2s;
+}
+
+.hero-media-bridge {
+  max-width: 290px;
+  margin: -8px auto 0;
+  text-align: center;
+  color: var(--accent-strong);
+  font-size: 0.88rem;
+  line-height: 1.6;
 }
 
 .hero-note-card,
@@ -399,6 +430,13 @@ textarea {
 
 .section-heading h2 {
   font-size: clamp(2.2rem, 4vw, 3.8rem);
+}
+
+.details-bridge {
+  margin: 0 0 4px;
+  color: var(--muted);
+  font-size: 0.96rem;
+  line-height: 1.7;
 }
 
 .details-list {
@@ -770,9 +808,14 @@ textarea:focus,
     left: 12px;
   }
 
-  .hero-stack-back {
-    top: 78px;
-    left: 72px;
+  .hero-stack-mid {
+    top: 72px;
+    left: 82px;
+  }
+
+  .hero-stack-far {
+    top: 102px;
+    left: 26px;
   }
 
   .details-list {
@@ -810,9 +853,9 @@ textarea:focus,
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 100svh;
+    min-height: 92svh;
     justify-content: center;
-    padding-block: 28px 88px;
+    padding-block: 24px 64px;
   }
 
   .hero h1 {
@@ -820,6 +863,9 @@ textarea:focus,
   }
 
   .hero-note,
+  .hero-actions-note,
+  .hero-media-bridge,
+  .details-bridge,
   .section-support,
   .story-copy p,
   .hero-note-card p,
@@ -839,36 +885,54 @@ textarea:focus,
   .hero-media {
     min-height: auto;
     width: calc(100% + 18px);
-    margin: -88px -9px 0;
+    margin: -64px -9px 0;
     place-items: center;
     overflow: clip;
-    padding: 106px 0 30px;
+    padding: 74px 0 18px;
     background: linear-gradient(180deg, rgba(242, 223, 216, 0.9), rgba(250, 241, 234, 0.98));
     border-top: 1px solid rgba(194, 125, 115, 0.16);
     border-bottom: 1px solid rgba(194, 125, 115, 0.14);
   }
 
   .hero-stack {
-    width: min(100%, 340px);
-    height: 392px;
+    width: min(100%, 352px);
+    height: 278px;
     margin: 0 auto;
   }
 
   .hero-stack-button {
-    width: 286px;
-    height: 334px;
+    width: 194px;
+    height: 236px;
   }
 
   .hero-stack-front {
-    top: 12px;
+    top: 16px;
     left: 50%;
-    --card-shift: calc(-50% - 12px);
+    --card-shift: calc(-50%);
+    --card-tilt: -5deg;
   }
 
-  .hero-stack-back {
-    top: 40px;
+  .hero-stack-mid {
+    top: 26px;
     left: 50%;
-    --card-shift: calc(-50% + 12px);
+    --card-shift: calc(-50% + 22px);
+    --card-tilt: 6deg;
+  }
+
+  .hero-stack-far {
+    top: 34px;
+    left: 50%;
+    --card-shift: calc(-50% - 24px);
+    --card-tilt: -10deg;
+  }
+
+  .hero-media-bridge {
+    margin-top: -10px;
+    padding: 0 24px;
+  }
+
+  .details-section {
+    padding-top: 28px;
   }
 
   .hero-scroll {
