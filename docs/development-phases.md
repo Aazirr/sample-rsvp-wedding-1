@@ -231,3 +231,13 @@ Checklist:
 - [x] Consolidate all remaining non-hero photos into a single gallery section.
 - [x] Remove scattered photo placements from the details, RSVP, and customization sections.
 - [x] Rebuild and visually verify the simplified photo structure.
+
+## Phase 21 - Gallery Side Preview Enhancement
+
+Status: Complete
+
+Checklist:
+
+- [x] Review the gallery behavior against `docs/DESIGN.md` and the current starter package scope.
+- [x] Add previous and next photo previews on the left and right of the selected gallery image.
+- [x] Rebuild and visually verify the updated gallery behavior across desktop and mobile.

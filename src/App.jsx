@@ -95,6 +95,25 @@ function App() {
   const touchRef = useRef({ startX: 0, startY: 0, dragging: false });
   const slideInterval = useRef(null);
 
+  const getSlidePosition = useCallback(
+    (index) => {
+      if (index === activeSlide) {
+        return "is-active";
+      }
+
+      if (index === (activeSlide - 1 + slideCount) % slideCount) {
+        return "is-prev";
+      }
+
+      if (index === (activeSlide + 1) % slideCount) {
+        return "is-next";
+      }
+
+      return "is-hidden";
+    },
+    [activeSlide, slideCount]
+  );
+
   const goToSlide = useCallback((index) => {
     setActiveSlide((index + slideCount) % slideCount);
   }, [slideCount]);
@@ -279,7 +298,6 @@ function App() {
 
           <div
             className="gallery-carousel"
-            aria-label="Wedding gallery slideshow"
             role="region"
             aria-roledescription="carousel"
             aria-label={`Photo ${activeSlide + 1} of ${slideCount}`}
@@ -293,7 +311,7 @@ function App() {
             >
               {galleryPhotos.map((photo, i) => (
                 <div
-                  className={`carousel-slide${i === activeSlide ? " is-active" : ""}`}
+                  className={`carousel-slide ${getSlidePosition(i)}`}
                   key={photo.src}
                   aria-hidden={i !== activeSlide}
                 >
