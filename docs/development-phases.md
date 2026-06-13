@@ -241,3 +241,13 @@ Checklist:
 - [x] Review the gallery behavior against `docs/DESIGN.md` and the current starter package scope.
 - [x] Add previous and next photo previews on the left and right of the selected gallery image.
 - [x] Rebuild and visually verify the updated gallery behavior across desktop and mobile.
+
+## Phase 22 - Wedding Party And Sponsors Expansion
+
+Status: Complete
+
+Checklist:
+
+- [x] Confirm the requested entourage and sponsor additions against the current design docs.
+- [x] Add wedding party, primary sponsors, and secondary sponsors content sections.
+- [x] Rebuild and visually verify the expanded page across desktop and mobile.

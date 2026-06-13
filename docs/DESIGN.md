@@ -12,6 +12,11 @@ Sample Wedding RSVP Website - Starter Package
 
 Note: this repo now includes local planning files in `docs/`, while the SunSpire Studios strategy docs above remain the business and offer reference for this sample.
 
+Custom scope note:
+
+- This sample started from the `Starter` package boundaries below.
+- The current implementation now includes a user-requested wedding party and sponsors expansion for this specific sample.
+
 ## Package Positioning
 
 This sample represents the SunSpire Studios `Starter` wedding RSVP package.
@@ -59,12 +64,17 @@ Out of scope for this Starter sample:
 
 - Full photo gallery
 - Love story page
-- Entourage section
 - Countdown timer
 - Registry or gift guide
 - Guest dashboard
 - Multi-event support
 - Map embed unless later upgraded to Signature
+
+Current custom additions requested for this implementation:
+
+- Wedding party / entourage section
+- Primary sponsors section
+- Secondary sponsors section
 
 ## Content Structure
 

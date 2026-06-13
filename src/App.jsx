@@ -69,6 +69,92 @@ const galleryPhotos = [
   { src: "/photos/9.jpg", alt: "Candid moment of the couple" },
 ];
 
+const weddingPartyGroups = [
+  {
+    title: "Parents of the Bride",
+    members: ["Roberto and Elena Villanueva"],
+  },
+  {
+    title: "Parents of the Groom",
+    members: ["Antonio and Marissa Dela Cruz"],
+  },
+  {
+    title: "Matron of Honor",
+    members: ["Camille Reyes-Santos"],
+  },
+  {
+    title: "Best Man",
+    members: ["Miguel Lorenzo Garcia"],
+  },
+  {
+    title: "Bridesmaids",
+    members: [
+      "Sofia Mendoza",
+      "Patricia Anne Lim",
+      "Bianca Isabelle Torres",
+      "Katrina Mae Navarro",
+      "Danielle Cruz",
+    ],
+  },
+  {
+    title: "Groomsmen",
+    members: [
+      "Rafael Santos",
+      "Jerome Castillo",
+      "Adrian Morales",
+      "Paolo Fernandez",
+      "Christian Bautista",
+    ],
+  },
+  {
+    title: "Flower Girls",
+    members: [
+      "Amelia Grace Ramos",
+      "Lia Isabelle Tan",
+      "Mikaela Joy Santos",
+    ],
+  },
+  {
+    title: "Flower Ladies",
+    members: [
+      "Teresa Gonzales",
+      "Carmen Aguilar",
+      "Lourdes Rivera",
+    ],
+  },
+  {
+    title: "Ring Bearers",
+    members: [
+      "Lucas Mateo Cruz",
+      "Noah Gabriel Reyes",
+    ],
+  },
+];
+
+const sponsors = {
+  primary: [
+    "Mr. and Mrs. Eduardo Sy",
+    "Mr. and Mrs. Benjamin Co",
+    "Mr. and Mrs. Ricardo Lim",
+    "Mr. and Mrs. Samuel Chua",
+    "Mr. and Mrs. Victor Tan",
+  ],
+  secondary: [
+    {
+      title: "Candle",
+      members: ["Jasmine Marie Lopez", "Carlo Angelo Rivera"],
+    },
+    {
+      title: "Veil",
+      members: ["Andrea Nicole Santos", "Francis Miguel Torres"],
+    },
+    {
+      title: "Cord",
+      members: ["Michelle Anne Garcia", "Joseph Emmanuel Reyes"],
+    },
+  ],
+};
+
 function App() {
   const [theme, setTheme] = useState("blush");
   const [typeMood, setTypeMood] = useState("classic");
@@ -475,6 +561,63 @@ function App() {
                 <span>Your sample confirmation has been saved locally.</span>
               </div>
             </form>
+          </div>
+        </section>
+
+        <section className="section entourage" data-reveal>
+          <div className="section-copy">
+            <p className="section-intro">
+              The celebration is held by family, guided by old friends, and shaped
+              by the people standing closest to the couple.
+            </p>
+            <h2>The wedding party</h2>
+          </div>
+
+          <div className="entourage-grid" aria-label="Wedding party">
+            {weddingPartyGroups.map((group) => (
+              <article className="party-group" key={group.title}>
+                <p className="party-role">{group.title}</p>
+                <ul className="party-list">
+                  {group.members.map((member) => (
+                    <li key={member}>{member}</li>
+                  ))}
+                </ul>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="section sponsors" data-reveal>
+          <div className="section-copy">
+            <p className="section-intro">
+              With gratitude to the sponsors who will witness, bless, and stand
+              beside Amelia and Theo throughout the ceremony.
+            </p>
+            <h2>Sponsors</h2>
+          </div>
+
+          <div className="sponsors-layout">
+            <article className="sponsor-panel primary-sponsors">
+              <p className="party-role">Primary Sponsors</p>
+              <ul className="party-list">
+                {sponsors.primary.map((sponsor) => (
+                  <li key={sponsor}>{sponsor}</li>
+                ))}
+              </ul>
+            </article>
+
+            <div className="secondary-sponsors" aria-label="Secondary sponsors">
+              {sponsors.secondary.map((group) => (
+                <article className="sponsor-panel" key={group.title}>
+                  <p className="party-role">{group.title}</p>
+                  <ul className="party-list">
+                    {group.members.map((member) => (
+                      <li key={member}>{member}</li>
+                    ))}
+                  </ul>
+                </article>
+              ))}
+            </div>
           </div>
         </section>
 
