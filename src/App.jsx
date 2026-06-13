@@ -332,9 +332,35 @@ function App() {
           </figure>
 
           <div className="hero-copy" data-reveal>
+            <p className="section-intro hero-intro">Invitation details</p>
+            <div className="hero-copy-block">
+              <h2 className="hero-copy-title">
+                Join them for vows beneath the pines and a garden dinner at golden
+                hour.
+              </h2>
+              <p className="hero-copy-text">
+                A practical RSVP page should still feel like a real invitation on
+                desktop, with the schedule, mood, and next step all visible at a
+                glance.
+              </p>
+            </div>
+
             <div className="hero-meta" aria-label="Event summary">
               <p>Tagaytay City, Philippines</p>
               <p>Outdoor ceremony, seated dinner, acoustic after-party set</p>
+            </div>
+
+            <div className="hero-itinerary" aria-label="Hero itinerary">
+              <article className="hero-itinerary-card">
+                <p className="detail-title">Ceremony</p>
+                <h3>3:00 PM</h3>
+                <p>St. Benedict Chapel, Tagaytay City</p>
+              </article>
+              <article className="hero-itinerary-card">
+                <p className="detail-title">Reception</p>
+                <h3>5:30 PM</h3>
+                <p>The Garden Pavilion at Alta Veranda</p>
+              </article>
             </div>
 
             <div className="hero-actions">
@@ -344,6 +370,11 @@ function App() {
               <a className="button button-secondary" href="#details">
                 View Event Details
               </a>
+            </div>
+
+            <div className="hero-note">
+              <p className="aside-title">Dress note</p>
+              <p>Soft neutrals, sage, dusty blue, and champagne tones are welcome.</p>
             </div>
           </div>
         </section>
@@ -529,7 +560,12 @@ function App() {
 
         <section className="section gallery" data-reveal>
           <div className="section-copy">
+            <p className="section-intro">Photo moments</p>
             <h2>Gallery</h2>
+            <p className="gallery-summary">
+              A tighter carousel keeps the page lightweight, while the side previews
+              make the desktop view feel more cinematic.
+            </p>
           </div>
 
           <div
@@ -792,6 +828,29 @@ function App() {
                 </div>
               </div>
             </div>
+
+            <aside className="customize-preview">
+              <p className="aside-title">Live starter preview</p>
+              <div
+                className={`preview-stage preview-${theme} preview-type-${typeMood}`}
+              >
+                <img
+                  className="preview-image"
+                  src={previewPhoto}
+                  alt="Preview of the selected hero photo option"
+                />
+                <div className="preview-copy">
+                  <p className="preview-label">Sample invitation mood</p>
+                  <h3>Amelia & Theo</h3>
+                  <p>November 22, 2026 · Tagaytay City</p>
+                  <div className="preview-tags" aria-label="Preview selections">
+                    <span>{palettes.find((palette) => palette.id === theme)?.name}</span>
+                    <span>{typeOptions.find((option) => option.id === typeMood)?.name}</span>
+                    <span>Starter package</span>
+                  </div>
+                </div>
+              </div>
+            </aside>
           </div>
         </section>
 

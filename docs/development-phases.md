@@ -294,3 +294,16 @@ Checklist:
 - [x] Tighten the mobile section and footer spacing to reduce the dead tail at the end of the page.
 - [x] Remove the last bits of page/footer bottom padding on mobile.
 - [x] Rebuild and visually verify the bottom edge on mobile.
+
+## Phase 27 - Desktop Editorial Refresh
+
+Status: Complete
+
+Checklist:
+
+- [x] Reassess the desktop experience against the current design direction and critique feedback.
+- [x] Rebuild the hero into a fuller editorial two-column composition for desktop.
+- [x] Differentiate the lower sections with stronger paneled backgrounds and more varied rhythm.
+- [x] Add a live theme preview panel to the customization section.
+- [x] Relax the section reveal behavior so content stays visible during capture and motion stays crisp.
+- [x] Rebuild and visually verify the refreshed page on desktop and mobile.

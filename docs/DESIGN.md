@@ -226,6 +226,8 @@ Desktop:
 - Keep the page centered and elegant.
 - Do not stretch text too wide.
 - Use portrait imagery as a strong visual anchor.
+- Give the hero a fuller editorial composition on larger screens so the image side and the information side feel equally intentional.
+- Let major sections shift rhythm on desktop with soft paneled bands, varied heading alignment, and stronger contrast between informational and interactive sections.
 
 ## Suggested Section Order
 
@@ -278,3 +280,4 @@ Signature and Premium upgrades can be shown elsewhere, but this sample should no
 - Optimize images for web delivery.
 - Preserve a one-page experience.
 - Prioritize mobile layout testing before desktop polish.
+- The basic customization sample can use a live preview panel on desktop so color, type, and hero-photo selections feel more tangible without expanding into a premium configurator.
