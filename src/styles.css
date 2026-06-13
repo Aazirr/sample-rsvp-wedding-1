@@ -421,18 +421,55 @@ a {
   gap: 26px;
 }
 
+.ceremony-copy {
+  max-width: 42rem;
+}
+
+.ceremony-summary {
+  margin: 0;
+  max-width: 36rem;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.7;
+  text-wrap: pretty;
+}
+
+.ceremony-layout {
+  display: grid;
+  gap: 28px;
+}
+
+.ceremony-lead {
+  display: grid;
+  gap: 12px;
+  align-content: start;
+}
+
+.ceremony-lead p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.7;
+  text-wrap: pretty;
+}
+
 .entourage-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 18px;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 18px 20px;
 }
 
 .party-group,
 .sponsor-panel {
   display: grid;
   gap: 14px;
-  padding: 20px 0 22px;
+  align-content: start;
+  padding: 18px 0 22px;
   border-top: 1px solid var(--line);
+}
+
+.party-group.is-featured,
+.primary-sponsors {
+  grid-column: span 2;
 }
 
 .party-role {
@@ -463,6 +500,14 @@ a {
 .secondary-sponsors {
   display: grid;
   gap: 22px;
+}
+
+.secondary-sponsors {
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.sponsors-layout .sponsor-panel {
+  padding-top: 20px;
 }
 
 .primary-sponsors .party-list {
@@ -882,10 +927,16 @@ textarea:focus,
 
   .details-layout,
   .rsvp-layout,
-  .customize-layout,
-  .sponsors-layout {
+  .customize-layout {
     grid-template-columns: minmax(0, 1.2fr) minmax(300px, 0.8fr);
     align-items: start;
+  }
+
+  .ceremony-layout,
+  .sponsors-layout {
+    grid-template-columns: minmax(220px, 0.42fr) minmax(0, 1fr);
+    align-items: start;
+    column-gap: 34px;
   }
 
   .gallery-carousel {
@@ -959,6 +1010,10 @@ textarea:focus,
   .secondary-sponsors {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     align-content: start;
+  }
+
+  .party-group.is-single {
+    min-height: 100%;
   }
 
   .form-grid {
@@ -1080,6 +1135,7 @@ textarea:focus,
   .rsvp-layout,
   .customize-layout,
   .sponsors-layout,
+  .ceremony-layout,
   .secondary-sponsors {
     justify-items: center;
   }
@@ -1138,12 +1194,18 @@ textarea:focus,
   .expectations,
   .expectations ul,
   .invitation-note,
+  .ceremony-lead,
   .rsvp-sidebar,
   .party-group,
   .sponsor-panel,
   .footer {
     justify-items: center;
     text-align: center;
+  }
+
+  .party-group.is-featured,
+  .primary-sponsors {
+    grid-column: auto;
   }
 
   .expectations li {

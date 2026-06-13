@@ -251,3 +251,14 @@ Checklist:
 - [x] Confirm the requested entourage and sponsor additions against the current design docs.
 - [x] Add wedding party, primary sponsors, and secondary sponsors content sections.
 - [x] Rebuild and visually verify the expanded page across desktop and mobile.
+
+## Phase 23 - Ceremony Flow Layout Reorder
+
+Status: Complete
+
+Checklist:
+
+- [x] Reassess the invitation section order against the expanded wedding content.
+- [x] Move the wedding party and sponsors sections higher into the page flow.
+- [x] Redesign the entourage and sponsors layout for a more suitable presentation.
+- [x] Rebuild and visually verify the updated page order and layout across desktop and mobile.

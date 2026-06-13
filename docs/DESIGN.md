@@ -226,13 +226,16 @@ Desktop:
 
 1. Hero invitation
 2. Event details
-3. RSVP form
-4. Theme customization sample
-5. Footer
+3. Wedding party / entourage
+4. Sponsors
+5. Gallery
+6. RSVP form
+7. Theme customization sample
+8. Footer
 
 Rationale:
 
-Guests should not have to scroll through storytelling before reaching the RSVP action. This keeps the sample aligned with the Starter package: practical, fast, and affordable.
+This custom sample now follows a more ceremony-led invitation flow, placing the entourage and sponsors near the event details instead of at the end of the page. The RSVP action still remains reachable early from the hero CTA, while the full scroll better matches how guests expect formal wedding information to unfold.
 
 ## Starter Package Boundaries
 

@@ -377,6 +377,81 @@ function App() {
           </div>
         </section>
 
+        <section className="section entourage" data-reveal>
+          <div className="section-copy ceremony-copy">
+            <p className="section-intro">Wedding party</p>
+            <h2>The names that stand with them</h2>
+            <p className="ceremony-summary">
+              Family opens the aisle, closest friends take their places, and every
+              role adds its own quiet weight to the ceremony.
+            </p>
+          </div>
+
+          <div className="ceremony-layout">
+            <div className="ceremony-lead">
+              <p className="aside-title">Ceremony entourage</p>
+              <p>
+                A more traditional invitation flow places the wedding party closer
+                to the event details, where guests naturally look for the people
+                taking part in the rites.
+              </p>
+            </div>
+
+            <div className="entourage-grid" aria-label="Wedding party">
+            {weddingPartyGroups.map((group) => (
+              <article
+                className={`party-group${group.members.length === 1 ? " is-single" : ""}${
+                  group.title.includes("Parents") ? " is-featured" : ""
+                }`}
+                key={group.title}
+              >
+                <p className="party-role">{group.title}</p>
+                <ul className="party-list">
+                  {group.members.map((member) => (
+                    <li key={member}>{member}</li>
+                  ))}
+                </ul>
+              </article>
+            ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="section sponsors" data-reveal>
+          <div className="section-copy ceremony-copy">
+            <p className="section-intro">Sponsors</p>
+            <h2>Witnesses to the vows</h2>
+            <p className="ceremony-summary">
+              With gratitude to the sponsors who will witness, bless, and stand
+              beside Amelia and Theo throughout the ceremony.
+            </p>
+          </div>
+
+          <div className="sponsors-layout ceremony-layout">
+            <article className="sponsor-panel primary-sponsors">
+              <p className="party-role">Primary Sponsors</p>
+              <ul className="party-list">
+                {sponsors.primary.map((sponsor) => (
+                  <li key={sponsor}>{sponsor}</li>
+                ))}
+              </ul>
+            </article>
+
+            <div className="secondary-sponsors" aria-label="Secondary sponsors">
+              {sponsors.secondary.map((group) => (
+                <article className="sponsor-panel" key={group.title}>
+                  <p className="party-role">{group.title}</p>
+                  <ul className="party-list">
+                    {group.members.map((member) => (
+                      <li key={member}>{member}</li>
+                    ))}
+                  </ul>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
         <section className="section gallery" data-reveal>
           <div className="section-copy">
             <h2>Gallery</h2>
@@ -561,63 +636,6 @@ function App() {
                 <span>Your sample confirmation has been saved locally.</span>
               </div>
             </form>
-          </div>
-        </section>
-
-        <section className="section entourage" data-reveal>
-          <div className="section-copy">
-            <p className="section-intro">
-              The celebration is held by family, guided by old friends, and shaped
-              by the people standing closest to the couple.
-            </p>
-            <h2>The wedding party</h2>
-          </div>
-
-          <div className="entourage-grid" aria-label="Wedding party">
-            {weddingPartyGroups.map((group) => (
-              <article className="party-group" key={group.title}>
-                <p className="party-role">{group.title}</p>
-                <ul className="party-list">
-                  {group.members.map((member) => (
-                    <li key={member}>{member}</li>
-                  ))}
-                </ul>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section className="section sponsors" data-reveal>
-          <div className="section-copy">
-            <p className="section-intro">
-              With gratitude to the sponsors who will witness, bless, and stand
-              beside Amelia and Theo throughout the ceremony.
-            </p>
-            <h2>Sponsors</h2>
-          </div>
-
-          <div className="sponsors-layout">
-            <article className="sponsor-panel primary-sponsors">
-              <p className="party-role">Primary Sponsors</p>
-              <ul className="party-list">
-                {sponsors.primary.map((sponsor) => (
-                  <li key={sponsor}>{sponsor}</li>
-                ))}
-              </ul>
-            </article>
-
-            <div className="secondary-sponsors" aria-label="Secondary sponsors">
-              {sponsors.secondary.map((group) => (
-                <article className="sponsor-panel" key={group.title}>
-                  <p className="party-role">{group.title}</p>
-                  <ul className="party-list">
-                    {group.members.map((member) => (
-                      <li key={member}>{member}</li>
-                    ))}
-                  </ul>
-                </article>
-              ))}
-            </div>
           </div>
         </section>
 
