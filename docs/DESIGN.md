@@ -174,6 +174,18 @@ Content:
 - "For RSVP concerns, please contact..."
 - Optional small "Created by SunSpire Studios" credit
 
+## Current Visual System — "Fine Stationery" (Phase 28)
+
+The implemented sample uses a fine-stationery invitation aesthetic:
+
+- Palette: warm ivory paper (`--paper`), warm near-black ink, and a per-theme accent. The blush / sage / champagne themes are tuned to dusty, editorial tones that flatter the cool-toned photoshoot rather than fighting it.
+- Type: Cormorant Garamond (high-contrast serif) for couple names and headings; Manrope (clean sans) for all UI, labels, and body.
+- Signature details: an "A&T" monogram mark, eyebrow labels carrying editorial section index numbers (01–06), and letterpress hairline dividers with a center diamond between sections.
+- Hero: a bright, matted "framed print" photo paired with a typographic invitation panel — no dark photo overlay (dark overlays are explicitly avoided below).
+- Background: clean paper with a single static top light-wash; no animated ambient background.
+
+The direction below remains the guiding intent; the system above is its current expression.
+
 ## Visual Direction
 
 Overall feel:

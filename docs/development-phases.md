@@ -307,3 +307,23 @@ Checklist:
 - [x] Add a live theme preview panel to the customization section.
 - [x] Relax the section reveal behavior so content stays visible during capture and motion stays crisp.
 - [x] Rebuild and visually verify the refreshed page on desktop and mobile.
+
+## Phase 28 - "Fine Stationery" Design Rework
+
+Status: Complete
+
+Goal: A full visual rework toward a distinctive, elevated fine-stationery invitation identity (user requested full creative freedom + full visual rework).
+
+Checklist:
+
+- [x] Replace the dark-vignette photo hero with a bright, matted "framed print" hero paired with a typographic invitation panel.
+- [x] Establish a warm-ivory paper design system with Cormorant Garamond (display) + Manrope (UI), replacing Libre Caslon + Source Sans.
+- [x] Add editorial primitives: eyebrow labels with section index numbers, an A&T monogram mark, and letterpress hairline dividers with a center diamond.
+- [x] Redefine the blush / sage / champagne themes into dustier, more sophisticated tones that flatter the cool-toned photoshoot.
+- [x] Remove the animated ambient-drift gradient background for a clean paper backdrop with a single static light wash.
+- [x] Restyle event details, wedding party, sponsors, gallery, RSVP, customization, and footer to the new system.
+- [x] Rebuild and visually verify hero, sections, RSVP success state, all three themes, and the mobile flow (desktop + mobile).
+
+Notes:
+
+- Identity is achieved through typography, color, and CSS ornament (monogram, diamond dividers) rather than raster/SVG art, keeping the Starter build lightweight (~4.9 KB gzip CSS). The custom-art directions in `assets-integration-plan.md` remain an optional future enhancement, not a dependency.

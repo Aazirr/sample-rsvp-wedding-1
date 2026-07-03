@@ -268,7 +268,7 @@ function App() {
     targets.forEach((target) => observer.observe(target));
 
     /* ── Parallax hero image on scroll ── */
-    const heroImg = document.querySelector(".hero-visual img");
+    const heroImg = document.querySelector(".hero-frame img");
     let parallaxTicking = false;
 
     const onScroll = () => {
@@ -314,74 +314,68 @@ function App() {
     <div className="app-shell">
       <main className="page">
         <section className="hero" aria-labelledby="hero-title">
-          <figure className="hero-visual" data-reveal>
+          <div className="hero-invite" data-reveal>
+            <p className="eyebrow hero-eyebrow">SunSpire Studios · Starter Sample</p>
+
+            <p className="monogram" aria-hidden="true">
+              A<span>&amp;</span>T
+            </p>
+
+            <p className="hero-together">Together with their families</p>
+
+            <h1 id="hero-title" className="couple">
+              <span className="couple-name">Amelia</span>
+              <span className="couple-amp" aria-hidden="true">&amp;</span>
+              <span className="couple-name">Theo</span>
+            </h1>
+
+            <p className="hero-date">
+              <span>Sunday</span>
+              <span className="hero-date-sep" aria-hidden="true" />
+              <span>November 22, 2026</span>
+            </p>
+
+            <p className="hero-place">
+              St. Benedict Chapel · Tagaytay City, Philippines
+            </p>
+
+            <p className="hero-lead">
+              Join us for vows beneath the pines and a garden dinner at golden
+              hour. We would be honored to share the day with you.
+            </p>
+
+            <div className="hero-actions">
+              <a className="button button-primary" href="#rsvp">
+                RSVP
+              </a>
+              <a className="button button-secondary" href="#details">
+                View event details
+              </a>
+            </div>
+
+            <p className="hero-glance" aria-label="Schedule at a glance">
+              <span><strong>3:00 PM</strong> Ceremony</span>
+              <span className="hero-glance-sep" aria-hidden="true" />
+              <span><strong>5:30 PM</strong> Reception</span>
+            </p>
+          </div>
+
+          <figure className="hero-frame" data-reveal>
             <img
               src="/photos/1.jpg"
               alt="Amelia and Theo embracing outdoors in Tagaytay"
             />
-            <figcaption className="hero-overlay">
-              <p className="hero-kicker">SunSpire Studios Starter Sample</p>
-              <h1 id="hero-title">
-                <span className="hero-name">Amelia</span>
-                <em>and</em>
-                <span className="hero-name">Theo</span>
-              </h1>
-              <p className="hero-date">November 22, 2026</p>
-              <p className="hero-subline">A candlelit garden celebration in Tagaytay City</p>
-            </figcaption>
+            <figcaption>Amelia &amp; Theo · Tagaytay City</figcaption>
           </figure>
-
-          <div className="hero-copy" data-reveal>
-            <p className="section-intro hero-intro">Invitation details</p>
-            <div className="hero-copy-block">
-              <h2 className="hero-copy-title">
-                Join them for vows beneath the pines and a garden dinner at golden
-                hour.
-              </h2>
-              <p className="hero-copy-text">
-                A practical RSVP page should still feel like a real invitation on
-                desktop, with the schedule, mood, and next step all visible at a
-                glance.
-              </p>
-            </div>
-
-            <div className="hero-meta" aria-label="Event summary">
-              <p>Tagaytay City, Philippines</p>
-              <p>Outdoor ceremony, seated dinner, acoustic after-party set</p>
-            </div>
-
-            <div className="hero-itinerary" aria-label="Hero itinerary">
-              <article className="hero-itinerary-card">
-                <p className="detail-title">Ceremony</p>
-                <h3>3:00 PM</h3>
-                <p>St. Benedict Chapel, Tagaytay City</p>
-              </article>
-              <article className="hero-itinerary-card">
-                <p className="detail-title">Reception</p>
-                <h3>5:30 PM</h3>
-                <p>The Garden Pavilion at Alta Veranda</p>
-              </article>
-            </div>
-
-            <div className="hero-actions">
-              <a className="button button-primary" href="#rsvp">
-                RSVP Now
-              </a>
-              <a className="button button-secondary" href="#details">
-                View Event Details
-              </a>
-            </div>
-
-            <div className="hero-note">
-              <p className="aside-title">Dress note</p>
-              <p>Soft neutrals, sage, dusty blue, and champagne tones are welcome.</p>
-            </div>
-          </div>
         </section>
 
         <section className="section details" id="details" data-reveal>
           <div className="section-copy">
+            <p className="eyebrow"><span className="idx">01</span>The day</p>
             <h2>Event details</h2>
+            <p className="section-lead">
+              Everything you need to plan the day, kept to a single glance.
+            </p>
           </div>
 
           <div className="details-layout">
@@ -414,7 +408,7 @@ function App() {
 
         <section className="section entourage" data-reveal>
           <div className="section-copy ceremony-copy">
-            <p className="section-intro">Wedding party</p>
+            <p className="eyebrow"><span className="idx">02</span>Wedding party</p>
             <h2>The names that stand with them</h2>
             <p className="ceremony-summary">
               Family opens the aisle, closest friends take their places, and every
@@ -525,7 +519,7 @@ function App() {
 
         <section className="section sponsors" data-reveal>
           <div className="section-copy ceremony-copy">
-            <p className="section-intro">Sponsors</p>
+            <p className="eyebrow"><span className="idx">03</span>Sponsors</p>
             <h2>Witnesses to the vows</h2>
             <p className="ceremony-summary">
               With gratitude to the sponsors who will witness, bless, and stand
@@ -560,11 +554,11 @@ function App() {
 
         <section className="section gallery" data-reveal>
           <div className="section-copy">
-            <p className="section-intro">Photo moments</p>
+            <p className="eyebrow"><span className="idx">04</span>Photo moments</p>
             <h2>Gallery</h2>
             <p className="gallery-summary">
-              A tighter carousel keeps the page lightweight, while the side previews
-              make the desktop view feel more cinematic.
+              A few frames from the couple, kept light so the page still loads in a
+              blink.
             </p>
           </div>
 
@@ -632,11 +626,11 @@ function App() {
 
         <section className="section rsvp" id="rsvp" data-reveal>
           <div className="section-copy">
-            <p className="section-intro">
-              The starter package keeps the RSVP flow lightweight while still
-              looking polished on mobile.
-            </p>
+            <p className="eyebrow"><span className="idx">05</span>Répondez</p>
             <h2>RSVP in one minute</h2>
+            <p className="section-lead">
+              Kindly reply by October 25, 2026. It takes less than a minute.
+            </p>
           </div>
 
           <div className="rsvp-layout">
@@ -752,11 +746,12 @@ function App() {
 
         <section className="section customize" data-reveal>
           <div className="section-copy">
-            <p className="section-intro">
-              Starter includes basic theming, enough for couples to feel the site is
-              theirs without turning the setup into a full custom build.
-            </p>
+            <p className="eyebrow"><span className="idx">06</span>Make it yours</p>
             <h2>Basic theme customization</h2>
+            <p className="section-lead">
+              Starter includes light theming, enough to feel personal without
+              turning setup into a full custom build.
+            </p>
           </div>
 
           <div className="customize-layout">
@@ -855,6 +850,10 @@ function App() {
         </section>
 
         <footer className="footer" data-reveal>
+          <p className="monogram footer-monogram" aria-hidden="true">
+            A<span>&amp;</span>T
+          </p>
+          <p className="footer-couple">Amelia &amp; Theo · November 22, 2026</p>
           <p>For RSVP concerns, please contact Sofia at +63 917 555 0146.</p>
           <small>Sample website concept for SunSpire Studios Starter Package.</small>
         </footer>
